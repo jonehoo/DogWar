@@ -283,14 +283,14 @@ cc.Class({
 		this.prop = cc.DataMgr.getValue('prop');
 		this.starIds = cc.DataMgr.getValue('starIds');
 
+		this.initStrengthParam();
+		this.initOnline();
+
 		this.checkSession();
 		this.showShareMenu();
 		this.initRecorder();
 
 		this.initSharePic();
-
-		this.initStrengthParam();
-		this.initOnline();
 
 		//this.initSdk();
 		//this.submitFirst();
@@ -792,11 +792,21 @@ cc.Class({
 	},
 
 	initRecorder() {
-		if (!cc.MyPlat) {
+		if (!cc.MyPlat || typeof cc.MyPlat.getGameRecorderManager !== 'function') {
 			return;
 		}
 
-		this.recorder = cc.MyPlat.getGameRecorderManager();
+		try {
+			this.recorder = cc.MyPlat.getGameRecorderManager();
+		} catch (e) {
+			console.log('getGameRecorderManager error:', e);
+			this.recorder = null;
+		}
+
+		if (!this.recorder) {
+			return;
+		}
+
 		this.recorder.onStart(res => {
 			this.isRecord = true;
 			this.recordTime = new Date().getTime();
