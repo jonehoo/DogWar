@@ -1,0 +1,37 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "headRoad",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.375,
+  "sample": 8,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "0eff83a0-018d-4d57-b713-ce4ca2e70879"
+            }
+          },
+          {
+            "frame": 0.125,
+            "value": {
+              "__uuid__": "d1996bcb-20ea-45c2-b055-2c25fe53dca5"
+            }
+          },
+          {
+            "frame": 0.25,
+            "value": {
+              "__uuid__": "6dd8ae9d-c3ad-416d-b7a2-daf17b9e19f9"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

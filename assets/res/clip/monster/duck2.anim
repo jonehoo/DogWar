@@ -1,0 +1,55 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "duck2",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 1.5,
+  "sample": 4,
+  "speed": 1,
+  "wrapMode": "2",
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "0f7eb245-a881-4c0e-875b-6777d3aec319"
+            }
+          },
+          {
+            "frame": 0.25,
+            "value": {
+              "__uuid__": "a0e79c9a-524c-4978-8444-bbc657c3d97f"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "4fbe8f0e-09df-487f-b5e0-fdbe2edcd687"
+            }
+          },
+          {
+            "frame": 0.75,
+            "value": {
+              "__uuid__": "c43c0f77-a1b5-4995-97c8-c8c753a4f8a6"
+            }
+          },
+          {
+            "frame": 1,
+            "value": {
+              "__uuid__": "3c3dfba4-7100-40d7-aa21-d0087a85a6e5"
+            }
+          },
+          {
+            "frame": 1.25,
+            "value": {
+              "__uuid__": "eb5ff79b-0dc7-4ab8-8c89-7a5032dd695e"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

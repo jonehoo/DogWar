@@ -1,0 +1,55 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "pig",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 2,
+  "sample": 3,
+  "speed": 1,
+  "wrapMode": "2",
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "4df99f1a-3ee4-4d5f-8ea9-8621ea03ab3e"
+            }
+          },
+          {
+            "frame": 0.3333333333333333,
+            "value": {
+              "__uuid__": "69661859-9634-46c1-b8cd-e08850e5c6f2"
+            }
+          },
+          {
+            "frame": 0.6666666666666666,
+            "value": {
+              "__uuid__": "af718733-e7b1-4a39-ac22-99e87db47bd3"
+            }
+          },
+          {
+            "frame": 1,
+            "value": {
+              "__uuid__": "beee0225-4ef2-4e6a-9b24-a6c0ed3091fa"
+            }
+          },
+          {
+            "frame": 1.3333333333333333,
+            "value": {
+              "__uuid__": "9b5a75d5-c398-4ebd-8da7-80e457a554e4"
+            }
+          },
+          {
+            "frame": 1.6666666666666667,
+            "value": {
+              "__uuid__": "d05de088-d599-4789-b0a7-9805dc2609e9"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

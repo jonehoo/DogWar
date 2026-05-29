@@ -1,0 +1,37 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "spikeHeadRoad",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.375,
+  "sample": 8,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "b12b231c-008d-4d38-89a0-1c8c11a4b162"
+            }
+          },
+          {
+            "frame": 0.125,
+            "value": {
+              "__uuid__": "9e44632a-4c43-4f28-8d16-8742df78d0bc"
+            }
+          },
+          {
+            "frame": 0.25,
+            "value": {
+              "__uuid__": "a7193aa8-5a1b-4b72-b64b-83feb3dd73ab"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

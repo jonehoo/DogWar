@@ -1,0 +1,31 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "spring",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.2,
+  "sample": 10,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "68810290-5ab9-4846-a9a6-f0963c006f06"
+            }
+          },
+          {
+            "frame": 0.1,
+            "value": {
+              "__uuid__": "91c8a4ed-4646-489b-9160-a574e4ea15e5"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

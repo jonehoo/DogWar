@@ -1,0 +1,73 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "bird",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 1.8,
+  "sample": 5,
+  "speed": 1,
+  "wrapMode": "2",
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "71fc59c2-1306-4949-9e24-e63fe6d05799"
+            }
+          },
+          {
+            "frame": 0.2,
+            "value": {
+              "__uuid__": "9fdb07c5-afd6-4749-9fc4-0a5dee8ad15c"
+            }
+          },
+          {
+            "frame": 0.4,
+            "value": {
+              "__uuid__": "71fc59c2-1306-4949-9e24-e63fe6d05799"
+            }
+          },
+          {
+            "frame": 0.6,
+            "value": {
+              "__uuid__": "c65ca9a3-8dde-4650-a6fe-65adc3e574fa"
+            }
+          },
+          {
+            "frame": 0.8,
+            "value": {
+              "__uuid__": "b3b8977f-85b8-4cd9-8af2-886b5eb4821b"
+            }
+          },
+          {
+            "frame": 1,
+            "value": {
+              "__uuid__": "f35d6c44-8d4b-4534-85c5-f1b925d8d8f9"
+            }
+          },
+          {
+            "frame": 1.2,
+            "value": {
+              "__uuid__": "a1d86f97-d3d9-4aa0-89dd-8563fdaae249"
+            }
+          },
+          {
+            "frame": 1.4,
+            "value": {
+              "__uuid__": "365d050f-419a-436b-ba0b-dfaa6b7be814"
+            }
+          },
+          {
+            "frame": 1.6,
+            "value": {
+              "__uuid__": "b09ec80c-6c65-4c55-9378-5a2f5ded0f82"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

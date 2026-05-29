@@ -1,0 +1,43 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "duck",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 1,
+  "sample": 4,
+  "speed": 1,
+  "wrapMode": "2",
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "b5683dc1-e2b8-4e7c-8ae2-aeae093a82c7"
+            }
+          },
+          {
+            "frame": 0.25,
+            "value": {
+              "__uuid__": "dd23617f-3d86-49a4-8c34-9551c4b87b6c"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "df11b156-ee72-43a7-bb44-b84dff058880"
+            }
+          },
+          {
+            "frame": 0.75,
+            "value": {
+              "__uuid__": "71288e3b-ab0d-4fd3-8ef6-acc3e744e3ac"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

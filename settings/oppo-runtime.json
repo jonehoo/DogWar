@@ -1,0 +1,19 @@
+{
+  "certificatePath": "",
+  "deviceOrientation": "landscape",
+  "disabledMode": "disabled is-disabled",
+  "icon": "D:\\Users\\squirrelWar2020214\\assets\\res\\pic\\bg\\icon.png",
+  "logLevel": "log",
+  "minPlatformVersion": "1044",
+  "name": "松鼠大作战2020",
+  "npmPath": "",
+  "packFirstScreenRes": false,
+  "package": "com.ssdzz.nearme.gamecenter",
+  "privatePath": "",
+  "showNpmPath": false,
+  "tinyPackageMode": false,
+  "tinyPackageServer": "",
+  "useDebugKey": true,
+  "versionCode": "1",
+  "versionName": "1.0.0"
+}

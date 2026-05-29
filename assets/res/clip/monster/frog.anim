@@ -1,0 +1,31 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "frog",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 1,
+  "sample": 2,
+  "speed": 1,
+  "wrapMode": "2",
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "f1df0b42-a360-4736-a64f-0794bfbda627"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "015c17e9-6eb4-4226-9268-9b06e74955f9"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

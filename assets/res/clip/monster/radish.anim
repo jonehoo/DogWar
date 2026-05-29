@@ -1,0 +1,55 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "radish",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 1,
+  "sample": 6,
+  "speed": 1,
+  "wrapMode": "2",
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "517d4c8c-22ce-408d-b22c-aa917a1384e3"
+            }
+          },
+          {
+            "frame": 0.16666666666666666,
+            "value": {
+              "__uuid__": "0181f7d5-2140-4903-9b8c-3e2264443823"
+            }
+          },
+          {
+            "frame": 0.3333333333333333,
+            "value": {
+              "__uuid__": "9cd3f582-718c-441b-a392-d59bc8ebdbe3"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "d509901e-1171-4744-bf2c-9c4c7bea6d57"
+            }
+          },
+          {
+            "frame": 0.6666666666666666,
+            "value": {
+              "__uuid__": "19621df9-8a29-4d70-9940-dcb095fc2cf0"
+            }
+          },
+          {
+            "frame": 0.8333333333333334,
+            "value": {
+              "__uuid__": "005900fd-1dfc-4ac8-ad00-cb1dcdcb7843"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

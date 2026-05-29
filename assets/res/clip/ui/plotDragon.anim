@@ -1,0 +1,43 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "plotDragon",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 1,
+  "sample": 4,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "978e3ae2-1b1b-4195-a439-d3bae207e93c"
+            }
+          },
+          {
+            "frame": 0.25,
+            "value": {
+              "__uuid__": "4841dc9c-91ae-47af-8c9c-dd9c1418f320"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "242f2def-6643-4d1c-b610-d54d7e2d4789"
+            }
+          },
+          {
+            "frame": 0.75,
+            "value": {
+              "__uuid__": "d6831be2-81b3-4212-81b2-39ff0aaaa58d"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

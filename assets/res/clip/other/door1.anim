@@ -1,0 +1,43 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "door1",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.4,
+  "sample": 10,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "fca7fdc7-b1d2-459c-834f-c616d72330a4"
+            }
+          },
+          {
+            "frame": 0.1,
+            "value": {
+              "__uuid__": "31e178c1-8676-4de3-bac6-21170a1877df"
+            }
+          },
+          {
+            "frame": 0.2,
+            "value": {
+              "__uuid__": "de101803-3db9-4cce-88ff-f3ec222e2c58"
+            }
+          },
+          {
+            "frame": 0.3,
+            "value": {
+              "__uuid__": "06f176ac-dbe3-41b2-a69f-60858a678b2e"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

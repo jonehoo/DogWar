@@ -1,0 +1,55 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "rino",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 1.2,
+  "sample": 5,
+  "speed": 1,
+  "wrapMode": "2",
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "8bd8770b-1dcc-47db-9243-623fd5ad459e"
+            }
+          },
+          {
+            "frame": 0.2,
+            "value": {
+              "__uuid__": "022be599-7988-4f7d-8c1e-579bd6f7d793"
+            }
+          },
+          {
+            "frame": 0.4,
+            "value": {
+              "__uuid__": "63cabc30-0899-432c-a996-07c52b37e157"
+            }
+          },
+          {
+            "frame": 0.6,
+            "value": {
+              "__uuid__": "36eb0a4d-9f52-4eb3-8a02-e57a8653c66f"
+            }
+          },
+          {
+            "frame": 0.8,
+            "value": {
+              "__uuid__": "4a98c173-3bee-4959-98b0-a4e1520ba2b2"
+            }
+          },
+          {
+            "frame": 1,
+            "value": {
+              "__uuid__": "149e9cf0-f84e-436b-8d2b-daa324511f27"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

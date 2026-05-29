@@ -1,0 +1,67 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "redPig",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 1.6,
+  "sample": 5,
+  "speed": 1,
+  "wrapMode": "2",
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "a36b1d08-4ca1-4d74-9aba-673f7ef67b17"
+            }
+          },
+          {
+            "frame": 0.2,
+            "value": {
+              "__uuid__": "aaf7c56c-22c0-42df-b3af-e3979fcb2e9a"
+            }
+          },
+          {
+            "frame": 0.4,
+            "value": {
+              "__uuid__": "18461e7b-6232-437b-9cb2-fb27f34ddf31"
+            }
+          },
+          {
+            "frame": 0.6,
+            "value": {
+              "__uuid__": "6fff6a21-1c4a-4526-9c9e-d05c1bd984a4"
+            }
+          },
+          {
+            "frame": 0.8,
+            "value": {
+              "__uuid__": "d2d2efa6-38ec-4752-bb5f-1fe8479fcb81"
+            }
+          },
+          {
+            "frame": 1,
+            "value": {
+              "__uuid__": "94c0d362-3c68-4168-9e43-4153f33325b4"
+            }
+          },
+          {
+            "frame": 1.2,
+            "value": {
+              "__uuid__": "b42d870b-0f20-4ad5-bcc3-5e078519d31e"
+            }
+          },
+          {
+            "frame": 1.4,
+            "value": {
+              "__uuid__": "b9aa7023-598f-47c1-851b-2a5662e32391"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

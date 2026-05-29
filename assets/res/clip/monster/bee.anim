@@ -1,0 +1,55 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "bee",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 1.2,
+  "sample": 5,
+  "speed": 1,
+  "wrapMode": "2",
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "428a1a69-656e-43e9-a798-2b218c319eb8"
+            }
+          },
+          {
+            "frame": 0.2,
+            "value": {
+              "__uuid__": "a8757441-bf19-479b-a8c1-cd6be0b8b68a"
+            }
+          },
+          {
+            "frame": 0.4,
+            "value": {
+              "__uuid__": "7b6c230e-d1fa-40be-a156-40319a681522"
+            }
+          },
+          {
+            "frame": 0.6,
+            "value": {
+              "__uuid__": "daf85071-4a41-4871-af7d-3f852bd6844f"
+            }
+          },
+          {
+            "frame": 0.8,
+            "value": {
+              "__uuid__": "577a48b6-7c0d-4024-b5b4-434d82d24517"
+            }
+          },
+          {
+            "frame": 1,
+            "value": {
+              "__uuid__": "c770cd22-9f40-467f-84aa-c56db85c01d8"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

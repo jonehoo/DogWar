@@ -1,0 +1,43 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "owt",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.8,
+  "sample": 5,
+  "speed": 1,
+  "wrapMode": "2",
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "e06184fc-1c3f-4a8d-bfbf-dbdbeebd07d2"
+            }
+          },
+          {
+            "frame": 0.2,
+            "value": {
+              "__uuid__": "9ab78df2-972a-4087-8908-2c8a2576e625"
+            }
+          },
+          {
+            "frame": 0.4,
+            "value": {
+              "__uuid__": "f89ea71b-6cbf-4c14-8b97-d6157e9f3e60"
+            }
+          },
+          {
+            "frame": 0.6,
+            "value": {
+              "__uuid__": "eec7c988-5519-4905-b79e-70dabd6fe888"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}
