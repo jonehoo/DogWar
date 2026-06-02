@@ -1,43 +1,40 @@
-//电子邮件puhalskijsemen@gmail.com 
-//源码网站 开vpn全局模式打开 http://web3incubators.com/ 
- //电报https://t.me/gamecode999 
- //网页客服 http://web3incubators.com/kefu.html  
+//  Su.GuiCuan
 const GameConfig = {};
 
 GameConfig.CONSTANT = {
 	PLAYER_BLOOD: 3,
 	BUY_MAX_BLOODR: 3,
 	UNLOCK_CHAPTER: 4,
-    TIME_RATE: 62,
+	TIME_RATE: 62,
 	FRAME_RATE: 10,
 	PLAYER_FRAME_RATE: 2,
 	COLOR_RATE: 15,
 	FLICKER_RATE: 50,
 	BLOOD_ANIMATION_RATE: 20,
 	COLOR_CHANGE_RATE: 12,
-	
+
 	COLLISION_RECT_WIDTH: 15,
 	BG_ITEM_WIDTH: 64,
-	
+
 	TIP_HOLD_TIME: 0.5,
 	CONTINUE_TIME: 10,
-    
+
 	BASE_BLOOD: 3,
 	BASE_LOTTER_TICKET: 3,
 	BASE_PASS_TIMES: 3,
 	BASE_STRENGTH: 5,
 	STRENGTH_RECOVER_LIMMIT: 300, //单位s
-	
+
 	MAX_PLAY_TIMES: 3,
 	MAX_SHARE_TIMES: 5,
 	MIN_DIRECT_WIDTH: 100,
 
-    OFFSET_X: 3,
+	OFFSET_X: 3,
 	OFFSET_Y: 2,
-    OFFSET_WIDTH: 6,
-    OFFSET_HEIGHT: 4,
+	OFFSET_WIDTH: 6,
+	OFFSET_HEIGHT: 4,
 	DIRECT_OFFSET_WIDTH: 40,
-	ONLINE_TIME: [300,600,1200],
+	ONLINE_TIME: [300, 600, 1200],
 };
 
 // 微信开放数据域排行榜开关
@@ -46,54 +43,54 @@ GameConfig.ENABLE_WX_OPEN_DATA_RANK = true;
 //分享成功失败概率
 GameConfig.SHARE_PROBABILITY = {
 	'1': {
-		'p1': [90,10], //小于2秒失败/成功
-		'p2': [30,70], //2秒-3.5秒失败/成功
-		'p3': [10,90], //3.5秒-5秒失败/成功
-		'p4': [0,100], //大于5秒失败/成功
+		'p1': [90, 10], //小于2秒失败/成功
+		'p2': [30, 70], //2秒-3.5秒失败/成功
+		'p3': [10, 90], //3.5秒-5秒失败/成功
+		'p4': [0, 100], //大于5秒失败/成功
 	},
 	'2': {
-		'p1': [75,25], //小于2秒失败/成功
-		'p2': [20,80], //2秒-3.5秒失败/成功
-		'p3': [5,95], //3.5秒-5秒失败/成功
-		'p4': [0,100], //大于5秒失败/成功
+		'p1': [75, 25], //小于2秒失败/成功
+		'p2': [20, 80], //2秒-3.5秒失败/成功
+		'p3': [5, 95], //3.5秒-5秒失败/成功
+		'p4': [0, 100], //大于5秒失败/成功
 	},
 	'3': {
-		'p1': [50,50], //小于2秒失败/成功
-		'p2': [10,90], //2秒-3.5秒失败/成功
-		'p3': [0,100], //3.5秒-5秒失败/成功
-		'p4': [0,100], //大于5秒失败/成功
+		'p1': [50, 50], //小于2秒失败/成功
+		'p2': [10, 90], //2秒-3.5秒失败/成功
+		'p3': [0, 100], //3.5秒-5秒失败/成功
+		'p4': [0, 100], //大于5秒失败/成功
 	}
 }
 
 GameConfig.CAMERA_CODE = {
-    UP: 0,
-    RIGHT: 1,
-    DOWN: 2,
-    LEFT: 3,
+	UP: 0,
+	RIGHT: 1,
+	DOWN: 2,
+	LEFT: 3,
 };
 
 GameConfig.CAMERA_MOVE_TYPE = {
-    MOVE_X: 1,
-    MOVE_Y: 2,
+	MOVE_X: 1,
+	MOVE_Y: 2,
 };
 
 GameConfig.POS_TYPE = {
-    MIDDLE: 'MIDDLE',
-    LEFT_DOWN: 'LEFT_DOWN',
-    LEFT_UP: 'LEFT_UP',
-    RIGHT_DOWN: 'RIGHT_DOWN',
-    RIGHT_UP: 'RIGHT_UP',
+	MIDDLE: 'MIDDLE',
+	LEFT_DOWN: 'LEFT_DOWN',
+	LEFT_UP: 'LEFT_UP',
+	RIGHT_DOWN: 'RIGHT_DOWN',
+	RIGHT_UP: 'RIGHT_UP',
 };
 
 GameConfig.OBJ_TYPE = {
-    PLAYER: 'PLAYER',
-    ROAD: 'ROAD',
-    MONSTER: 'MONSTER',
-    FLYMONSTER: 'FLYMONSTER',
-    BOSS: 'BOSS',
-    OTHER: 'OTHER',
-    THORN: 'THORN',
-    POINT: 'POINT',
+	PLAYER: 'PLAYER',
+	ROAD: 'ROAD',
+	MONSTER: 'MONSTER',
+	FLYMONSTER: 'FLYMONSTER',
+	BOSS: 'BOSS',
+	OTHER: 'OTHER',
+	THORN: 'THORN',
+	POINT: 'POINT',
 };
 
 GameConfig.PREFAB_TYPE = {
@@ -110,39 +107,39 @@ GameConfig.PREFAB_TYPE = {
 	GUIDE11: ['prefab/object/guide/guide11', 'Guide', 'NO', 'guide11', 99],
 	GUIDE12: ['prefab/object/guide/guide12', 'Guide', 'NO', 'guide12', 99],
 	GUIDE13: ['prefab/object/guide/guide13', 'Guide', 'NO', 'guide13', 99],
-	
-	PLAYER: ['prefab/object/monster/player', 'Player', 'PLAYER', 'player', 18,18],
+
+	PLAYER: ['prefab/object/monster/player', 'Player', 'PLAYER', 'player', 18, 18],
 	POINT: ['prefab/object/point', 'Point', 'POINT', 'point', 1],
-	
-	SNAKE: ['prefab/object/monster/snake', 'Monster', 'MONSTER', 'snake', 11,11],
-	BIGSNAKE: ['prefab/object/monster/bigSnake', 'Monster', 'MONSTER', 'bigSnake', 11,11],
-	BIGSNAKE2: ['prefab/object/monster/bigSnake2', 'Monster', 'MONSTER', 'bigSnake2', 11,11],
-	WOLF: ['prefab/object/monster/wolf', 'Monster', 'MONSTER', 'wolf', 11,11],
-	PIG: ['prefab/object/monster/pig', 'Monster', 'MONSTER', 'pig', 11,11],
-	REDPIG: ['prefab/object/monster/redPig', 'Monster', 'MONSTER', 'redPig', 11,11],
-	GREENPIG: ['prefab/object/monster/greenPig', 'Monster', 'MONSTER', 'greenPig', 11,11],
-    FROG: ['prefab/object/monster/frog', 'Monster', 'MONSTER', 'frog', 11,11],
-	FROG2: ['prefab/object/monster/frog2', 'Monster', 'MONSTER', 'frog2', 11,11],
-	ANT: ['prefab/object/monster/ant', 'Monster', 'MONSTER', 'ant', 11,11],
-	SCORPION: ['prefab/object/monster/scorpion', 'Monster', 'MONSTER', 'scorpion', 11,11],
-    ATTACKFLOWER: ['prefab/object/monster/attackFlower', 'Monster', 'MONSTER', 'attackFlower', 11,11],
-	RINO: ['prefab/object/monster/rino', 'Monster', 'MONSTER', 'rino', 12,12],
-	RADISH: ['prefab/object/monster/radish', 'Monster', 'MONSTER', 'radish', 53,53],
-	INSECT: ['prefab/object/monster/insect', 'Monster', 'MONSTER', 'insect', 12,12],
-	
-	BIRD: ['prefab/object/monster/bird', 'FlyMonster', 'FLYMONSTER', 'bird', 12,12],
-	BIRD2: ['prefab/object/monster/bird2', 'FlyMonster', 'FLYMONSTER', 'bird2', 12,12],
-	BEE: ['prefab/object/monster/bee', 'FlyMonster', 'FLYMONSTER', 'bee', 12,12],
-	BAT: ['prefab/object/monster/bat', 'FlyMonster', 'FLYMONSTER', 'bat', 12,12],
-	DUCK: ['prefab/object/monster/duck', 'FlyMonster', 'FLYMONSTER', 'duck', 12,12],
-	BAT2: ['prefab/object/monster/bat2', 'FlyMonster', 'FLYMONSTER', 'bat2', 12,12],
-	OWT: ['prefab/object/monster/owt', 'FlyMonster', 'FLYMONSTER', 'owt', 12,12],
-	EATFLOWER: ['prefab/object/monster/eatFlower', 'FlyMonster', 'FLYMONSTER', 'eatFlower', 12,12],
-	TRACKBEE: ['prefab/object/monster/trackBee', 'FlyMonster', 'FLYMONSTER', 'trackBee', 15,17],
-	NORMALBEE: ['prefab/object/monster/normalBee', 'FlyMonster', 'FLYMONSTER', 'normalBee', 15,17],
-	
+
+	SNAKE: ['prefab/object/monster/snake', 'Monster', 'MONSTER', 'snake', 11, 11],
+	BIGSNAKE: ['prefab/object/monster/bigSnake', 'Monster', 'MONSTER', 'bigSnake', 11, 11],
+	BIGSNAKE2: ['prefab/object/monster/bigSnake2', 'Monster', 'MONSTER', 'bigSnake2', 11, 11],
+	WOLF: ['prefab/object/monster/wolf', 'Monster', 'MONSTER', 'wolf', 11, 11],
+	PIG: ['prefab/object/monster/pig', 'Monster', 'MONSTER', 'pig', 11, 11],
+	REDPIG: ['prefab/object/monster/redPig', 'Monster', 'MONSTER', 'redPig', 11, 11],
+	GREENPIG: ['prefab/object/monster/greenPig', 'Monster', 'MONSTER', 'greenPig', 11, 11],
+	FROG: ['prefab/object/monster/frog', 'Monster', 'MONSTER', 'frog', 11, 11],
+	FROG2: ['prefab/object/monster/frog2', 'Monster', 'MONSTER', 'frog2', 11, 11],
+	ANT: ['prefab/object/monster/ant', 'Monster', 'MONSTER', 'ant', 11, 11],
+	SCORPION: ['prefab/object/monster/scorpion', 'Monster', 'MONSTER', 'scorpion', 11, 11],
+	ATTACKFLOWER: ['prefab/object/monster/attackFlower', 'Monster', 'MONSTER', 'attackFlower', 11, 11],
+	RINO: ['prefab/object/monster/rino', 'Monster', 'MONSTER', 'rino', 12, 12],
+	RADISH: ['prefab/object/monster/radish', 'Monster', 'MONSTER', 'radish', 53, 53],
+	INSECT: ['prefab/object/monster/insect', 'Monster', 'MONSTER', 'insect', 12, 12],
+
+	BIRD: ['prefab/object/monster/bird', 'FlyMonster', 'FLYMONSTER', 'bird', 12, 12],
+	BIRD2: ['prefab/object/monster/bird2', 'FlyMonster', 'FLYMONSTER', 'bird2', 12, 12],
+	BEE: ['prefab/object/monster/bee', 'FlyMonster', 'FLYMONSTER', 'bee', 12, 12],
+	BAT: ['prefab/object/monster/bat', 'FlyMonster', 'FLYMONSTER', 'bat', 12, 12],
+	DUCK: ['prefab/object/monster/duck', 'FlyMonster', 'FLYMONSTER', 'duck', 12, 12],
+	BAT2: ['prefab/object/monster/bat2', 'FlyMonster', 'FLYMONSTER', 'bat2', 12, 12],
+	OWT: ['prefab/object/monster/owt', 'FlyMonster', 'FLYMONSTER', 'owt', 12, 12],
+	EATFLOWER: ['prefab/object/monster/eatFlower', 'FlyMonster', 'FLYMONSTER', 'eatFlower', 12, 12],
+	TRACKBEE: ['prefab/object/monster/trackBee', 'FlyMonster', 'FLYMONSTER', 'trackBee', 15, 17],
+	NORMALBEE: ['prefab/object/monster/normalBee', 'FlyMonster', 'FLYMONSTER', 'normalBee', 15, 17],
+
 	BEENEST: ['prefab/object/boss/beeNest', 'Boss', 'BOSS', 'beeNest', 16],
-	
+
 	TREE1: ['prefab/object/ornament/tree1', 'No', 'NO', 'tree1', 1],
 	TREE2: ['prefab/object/ornament/tree2', 'No', 'NO', 'tree2', 1],
 	TREE3: ['prefab/object/ornament/tree3', 'No', 'NO', 'tree3', 1],
@@ -153,14 +150,14 @@ GameConfig.PREFAB_TYPE = {
 	GRASS: ['prefab/object/ornament/grass', 'Other', 'OTHER', 'grass', 4],
 	CLOUD1: ['prefab/object/ornament/cloud1', 'No', 'BG', 'cloud1', 0],
 	CLOUD2: ['prefab/object/ornament/cloud2', 'No', 'BG', 'cloud2', 0],
-	
+
 	APPLE: ['prefab/object/food/apple', 'Food', 'NO', 'apple', 7],
 	BANANA: ['prefab/object/food/banana', 'Food', 'NO', 'banana', 7],
 	MELON: ['prefab/object/food/melon', 'Food', 'NO', 'melon', 7],
 	ORANGE: ['prefab/object/food/orange', 'Food', 'NO', 'orange', 7],
 	PINEAPPLE: ['prefab/object/food/pineapple', 'Food', 'NO', 'pineapple', 7],
 	STRAWBERRY: ['prefab/object/food/strawberry', 'Food', 'NO', 'strawberry', 7],
-  
+
 	BOX: ['prefab/object/road/box', 'Road', 'ROAD', 'box', 9],
 	BALL: ['prefab/object/road/ball', 'Road', 'ROAD', 'ball', 9],
 	IROLBALL: ['prefab/object/road/irolBall', 'Road', 'ROAD', 'irolBall', 9],
@@ -210,7 +207,7 @@ GameConfig.PREFAB_TYPE = {
 	SPRINGL: ['prefab/object/road/springL', 'Road', 'ROAD', 'springL', 16],
 	SPRINGR: ['prefab/object/road/springR', 'Road', 'ROAD', 'springR', 16],
 	SPRINGLR: ['prefab/object/road/springLR', 'Road', 'ROAD', 'springLR', 16],
-	
+
 	AXE: ['prefab/object/thorn/axe', 'Thorn', 'NO', 'axe', 7],
 	THORN: ['prefab/object/thorn/thorn', 'Thorn', 'OTHER', 'thorn', 52],
 	SAW: ['prefab/object/thorn/saw', 'Thorn', 'NO', 'saw', 7],
@@ -228,13 +225,13 @@ GameConfig.PREFAB_TYPE = {
 	//MOVETHORN2: ['prefab/object/thorn/moveThorn2', 'Thorn', 'NO', 'moveThorn2', 7],
 	//MOVETHORN3: ['prefab/object/thorn/moveThorn3', 'Thorn', 'NO', 'moveThorn3', 7],
 	//MOVETHORN4: ['prefab/object/thorn/moveThorn4', 'Thorn', 'NO', 'moveThorn4', 7],
-	
+
 	PLANTBULLET: ['prefab/object/bullet/plantBullet', 'Bullet', 'NO', 'plantBullet', 65],
 	CHESTBULLET: ['prefab/object/bullet/chestBullet', 'Bullet', 'NO', 'chestBullet', 65],
 	TURRETBULLET: ['prefab/object/bullet/turretBullet', 'Bullet', 'NO', 'turretBullet', 65],
 	BEEBULLET: ['prefab/object/bullet/beeBullet', 'Bullet', 'NO', 'beeBullet', 65],
 	BATBULLET: ['prefab/object/bullet/batBullet', 'Bullet', 'NO', 'batBullet', 65],
-	
+
 	ICE: ['prefab/object/other/ice', 'NO', 'NO', 'ice', 51],
 	EYE: ['prefab/object/other/eye', 'Eye', 'NO', 'eye', 70],
 	COIN: ['prefab/object/other/coin', 'Coin', 'NO', 'coin', 51],
@@ -256,17 +253,17 @@ GameConfig.PREFAB_TYPE = {
 	MONSTERBLAST: ['prefab/object/other/collectBlast', 'Blast', 'NO', 'collectBlast', 65],
 	BOSSBLAST: ['prefab/object/other/bossBlast', 'Blast', 'NO', 'collectBlast', 65],
 	POINTBLAST: ['prefab/object/other/pointBlast', 'Blast', 'NO', 'collectBlast', 65],
-	
+
 	CLOCKICON: ['prefab/object/other/clockIcon', 'Icon', 'NO', 'clockIcon', 52],
 	WATERICON: ['prefab/object/other/waterIcon', 'Icon', 'NO', 'waterIcon', 52],
 	SHIELDICON: ['prefab/object/other/shieldIcon', 'Icon', 'NO', 'shieldIcon', 52],
 	STARICON: ['prefab/object/other/starIcon', 'Icon', 'NO', 'starIcon', 52],
 	NOTEICON: ['prefab/object/other/noteIcon', 'Icon', 'NO', 'noteIcon', 52],
-	
-	
+
+
 	BAGPANEL: ['prefab/ui/panel/bagPanel', 'BagPanel', 'NO', 'bagPanel', 2],
 	ENDPANEL: ['prefab/ui/panel/endPanel', 'EndPanel', 'NO', 'endPanel', 1],
-    DEADPANEL: ['prefab/ui/panel/deadPanel2', 'DeadPanel', 'NO', 'deadPanel2', 1],
+	DEADPANEL: ['prefab/ui/panel/deadPanel2', 'DeadPanel', 'NO', 'deadPanel2', 1],
 	SHOPPANEL: ['prefab/ui/panel/shopPanel', 'ShopPanel', 'NO', 'shopPanel', 1],
 	PROPPANEL: ['prefab/ui/panel/propPanel', 'PropPanel', 'NO', 'propPanel', 1],
 	SKILLPANEL: ['prefab/ui/panel/skillPanel', 'SkillPanel', 'NO', 'skillPanel', 1],
@@ -286,7 +283,7 @@ GameConfig.PREFAB_TYPE = {
 	VEDIOSHAREPANEL: ['prefab/ui/panel/vedioSharePanel', 'VedioSharePanel', 'NO', 'vedioSharePanel', 2],
 	CHAPTERINFOPANEL: ['prefab/ui/panel/chapterInfoPanel', 'ChapterInfoPanel', 'NO', 'chapterInfoPanel', 2],
 	LOTTERRESULTPANEL: ['prefab/ui/panel/lotterResultPanel', 'LotterResultPanel', 'NO', 'lotterResultPanel', 2],
-	
+
 	PROPTIP: ['prefab/ui/item/propTip', 'PropTip', 'NO', 'propTip', 5],
 	STARANIM: ['prefab/ui/item/starAnim', 'No', 'NO', 'starAnim', 1],
 	BLOODITEM: ['prefab/ui/item/bloodItem', 'NO', 'NO', 'bloodItem', 1],

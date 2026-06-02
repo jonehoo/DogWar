@@ -1,85 +1,82 @@
-//电子邮件puhalskijsemen@gmail.com 
-//源码网站 开vpn全局模式打开 http://web3incubators.com/ 
- //电报https://t.me/gamecode999 
- //网页客服 http://web3incubators.com/kefu.html  
+//  Su.GuiCuan
 const ObjConfig = {};
 ObjConfig.SCORE = {
-    'tile1':50,
-	'tile2':80,
-	'wooden':50,
+	'tile1': 50,
+	'tile2': 80,
+	'wooden': 50,
 	'apple': 50,
-    'banana': 80,
-    'melon': 100,
-    'orange': 120,
-    'pineapple': 150,
-    'strawberry': 180,
-    'ball': 100,
-    'diamond': 1000,
-    'coin': 100,
-    'noteCoin': 100,
-    'star': 200,
+	'banana': 80,
+	'melon': 100,
+	'orange': 120,
+	'pineapple': 150,
+	'strawberry': 180,
+	'ball': 100,
+	'diamond': 1000,
+	'coin': 100,
+	'noteCoin': 100,
+	'star': 200,
 	'beeNest': 1000,
 };
 
 ObjConfig.GUIDE = [
 	{
-		path:'null',
+		path: 'null',
 		desc: '欢迎来到星斗大森林',
 		showFinger: false,
 		showTip: true,
 		canClick: true,
 	},
 	{
-		path:'ui/minStart',
+		path: 'ui/minStart',
 		desc: '废话不多说,咱们开整?',
 		showFinger: true,
 		showTip: false,
 		canClick: false,
 	},
 	{
-		path:'content/start',
+		path: 'content/start',
 		desc: '点击开始呗',
 		showFinger: true,
 		showTip: false,
 		canClick: false,
 	},
 	{
-		path:'content/btns/start2',
+		path: 'content/btns/start2',
 		desc: '双倍血量整起!',
 		showFinger: true,
 		showTip: false,
 		canClick: false,
 	},
 	{
-		path:'content/btnArea/next',
+		path: 'content/btnArea/next',
 		desc: '继续下一关?',
 		showFinger: true,
 		showTip: false,
 		canClick: false,
 	},
-    {
-		path:'content/btnArea/home',
+	{
+		path: 'content/btnArea/home',
 		desc: '有钱鸟,咱回去买点装备?',
 		showFinger: true,
 		showTip: false,
 		canClick: false,
 	},
-    {
-		path:'ui/rightBottomBtnArea2/shop',
+	{
+		path: 'ui/rightBottomBtnArea2/shop',
 		desc: '走,去商店瞧瞧',
 		showFinger: true,
 		showTip: false,
 		canClick: false,
 	},
 	{
-		path:'buy',
+		path: 'buy',
 		desc: '嗯~~,圣水,很流批的样子,买几个看看',
 		showFinger: true,
 		showTip: false,
 		canClick: false,
 	},
 	{
-		path:'null',
+		path: 'null',
 		desc: 'nice~,救公主,走起走起',
 		showFinger: false,
 		showTip: true,
@@ -89,35 +86,35 @@ ObjConfig.GUIDE = [
 
 //0 = 公主, 1 = 松鼠 2 = 龙
 ObjConfig.PLOT = [
-	{'index': 0,'value': '鼠大','time': 100,'holdTime': 80},
-	{'index': 0,'value': '最近的新游','time': 40,'holdTime':80},
-	{'index': 0,'value': '冒险小子','time': 40,'holdTime': 80},
-	{'index': 0,'value': '玩到第几关了啊','time': 40,'holdTime': 120},
-	{'index': 1,'value': '俺刚玩到第3关','time': 60,'holdTime': 100},
-	{'index': 1,'value': '公主姐姐[傻笑]','time': 40,'holdTime': 100},
-	{'index': 0,'value': '本公主都玩到第8关呐!','time': 65,'holdTime': 110},
-	{'index': 0,'value': '你个憨憨[无奈]','time': 40,'holdTime': 100},
-	{'index': 1,'value': '嘿嘿,[摸头]','time': 60,'holdTime': 100},
-	{'index': 2,'value': '哇,好水灵的小妞[流口水]','time': 40,'holdTime': 130},
-	{'index': 2,'value': '抓回去当压寨夫人[流口水]','time': 40,'holdTime': 130},
-	{'index': 0,'value': '啊!!!','time': 30,'holdTime': 60},
-	{'index': 0,'value': '鼠大,救我[害怕]','time': 40,'holdTime': 60},
-	{'index': 1,'value': '公主姐姐!!![着急]','time': 50,'holdTime': 60},
-	{'index': 0,'value': '鼠大,救我!!!','time': 40,'holdTime': 40},
+	{ 'index': 0, 'value': '鼠大', 'time': 100, 'holdTime': 80 },
+	{ 'index': 0, 'value': '最近的新游', 'time': 40, 'holdTime': 80 },
+	{ 'index': 0, 'value': '冒险小子', 'time': 40, 'holdTime': 80 },
+	{ 'index': 0, 'value': '玩到第几关了啊', 'time': 40, 'holdTime': 120 },
+	{ 'index': 1, 'value': '俺刚玩到第3关', 'time': 60, 'holdTime': 100 },
+	{ 'index': 1, 'value': '公主姐姐[傻笑]', 'time': 40, 'holdTime': 100 },
+	{ 'index': 0, 'value': '本公主都玩到第8关呐!', 'time': 65, 'holdTime': 110 },
+	{ 'index': 0, 'value': '你个憨憨[无奈]', 'time': 40, 'holdTime': 100 },
+	{ 'index': 1, 'value': '嘿嘿,[摸头]', 'time': 60, 'holdTime': 100 },
+	{ 'index': 2, 'value': '哇,好水灵的小妞[流口水]', 'time': 40, 'holdTime': 130 },
+	{ 'index': 2, 'value': '抓回去当压寨夫人[流口水]', 'time': 40, 'holdTime': 130 },
+	{ 'index': 0, 'value': '啊!!!', 'time': 30, 'holdTime': 60 },
+	{ 'index': 0, 'value': '鼠大,救我[害怕]', 'time': 40, 'holdTime': 60 },
+	{ 'index': 1, 'value': '公主姐姐!!![着急]', 'time': 50, 'holdTime': 60 },
+	{ 'index': 0, 'value': '鼠大,救我!!!', 'time': 40, 'holdTime': 40 },
 ];
 
 ObjConfig.STATION = [
-    'blood',
+	'blood',
 	'liquid',
 	'bloodr',
 	'strength'
 ];
 
 ObjConfig.SHOP = {
-    'blood': {
+	'blood': {
 		bigKey: 'prop',
 		key: 'blood',
-		consumeKey:'coin',
+		consumeKey: 'coin',
 		name: '大血瓶',
 		price: 200,
 		desc: '大瓶装的恢复药水,可恢复角色血量致满额',
@@ -126,7 +123,7 @@ ObjConfig.SHOP = {
 	'liquid': {
 		bigKey: 'prop',
 		key: 'liquid',
-		consumeKey:'coin',
+		consumeKey: 'coin',
 		name: '圣水',
 		price: 100,
 		desc: '一种神奇的药水,可消除角色晕眩状态',
@@ -135,55 +132,55 @@ ObjConfig.SHOP = {
 	'strength': {
 		bigKey: 'strength',
 		key: 'strength',
-		consumeKey:'coin',
+		consumeKey: 'coin',
 		name: '体力',
 		price: 500,
 		desc: '每日只能购买2次(加3点)',
 		iconIndex: 4,
 	},
-	'bloodr':{
+	'bloodr': {
 		bigKey: 'prop',
 		key: 'bloodr',
-		consumeKey:'star',
+		consumeKey: 'star',
 		name: '血槽',
 		price: 20,
-        desc:'增加当前关卡一个血槽位',
+		desc: '增加当前关卡一个血槽位',
 		iconIndex: 6,
-    },
-	'power':{
+	},
+	'power': {
 		bigKey: 'skill',
 		tempKey: 'powerTemp',
 		key: 'power',
-		consumeKey:'star',
+		consumeKey: 'star',
 		name: '大力士',
 		price: 48,
-        desc:'消除举起石头时的减速效果',
+		desc: '消除举起石头时的减速效果',
 		iconIndex: 7,
-    },
-	'moreJump':{
+	},
+	'moreJump': {
 		bigKey: 'skill',
 		tempKey: 'moreJumpTemp',
 		key: 'moreJump',
-		consumeKey:'star',
+		consumeKey: 'star',
 		name: '二段跳',
 		price: 66,
-        desc:'具有二段跳跃的能力',
+		desc: '具有二段跳跃的能力',
 		iconIndex: 7,
-    },
-	'immune':{
+	},
+	'immune': {
 		bigKey: 'skill',
 		tempKey: 'immuneTemp',
 		key: 'immune',
-		consumeKey:'star',
+		consumeKey: 'star',
 		name: '免疫炸弹',
 		price: 88,
-        desc:'具有免疫炸弹的能力',
+		desc: '具有免疫炸弹的能力',
 		iconIndex: 7,
-    },
+	},
 };
 
 ObjConfig.LOTTER = [
-    {
+	{
 		bigKey: 'prop',
 		key: 'blood',
 		name: '大血瓶',
@@ -224,20 +221,20 @@ ObjConfig.LOTTER = [
 		iconIndex: 3,
 	},
 	{
-		c1:{
+		c1: {
 			bigKey: 'skin',
 			key: 'skin',
-		    name: '任意皮肤碎片',
-		    value: 1,
-		    weight: 5,
+			name: '任意皮肤碎片',
+			value: 1,
+			weight: 5,
 			iconIndex: 5,
 		},
-		c2:{
+		c2: {
 			bigKey: 'coin',
 			key: 'coin',
-		    name: '金币',
-		    value: 288,
-		    weight: 30,
+			name: '金币',
+			value: 288,
+			weight: 30,
 			iconIndex: 0,
 		}
 	},
@@ -263,7 +260,7 @@ ObjConfig.ONLINE = {
 	'0': {
 		index: 0,
 		bigKey: 'coin',
-	    key: 'coin',
+		key: 'coin',
 		name: '金币',
 		value: 200,
 		iconIndex: 0,
@@ -271,7 +268,7 @@ ObjConfig.ONLINE = {
 	'1': {
 		index: 1,
 		bigKey: 'prop',
-	    key: 'blood',
+		key: 'blood',
 		name: '大血瓶',
 		value: 2,
 		iconIndex: 1,
@@ -279,7 +276,7 @@ ObjConfig.ONLINE = {
 	'2': {
 		index: 2,
 		bigKey: 'strength',
-	    key: 'strength',
+		key: 'strength',
 		name: '体力',
 		value: 5,
 		iconIndex: 4,
@@ -287,859 +284,859 @@ ObjConfig.ONLINE = {
 };
 
 ObjConfig.VEDIO = {
-	'coin':{
-		'name':'金币',
+	'coin': {
+		'name': '金币',
 		'iconIndex': 0,
 		'value': 300,
 	},
-	'star':{
-		'name':'星星',
+	'star': {
+		'name': '星星',
 		'iconIndex': 1,
 		'value': 3,
 	},
-	'strength':{
-		'name':'体力',
+	'strength': {
+		'name': '体力',
 		'iconIndex': 2,
 		'value': 3,
 	},
 };
 
 ObjConfig.LAYERCONF = {
-    'layer00':{
+	'layer00': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
-		'bgIndex':0,
-		'time':120,
+		'bgIndex': 0,
+		'time': 120,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 150,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'layer01':{
+	'layer01': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
-		'bgIndex':0,
-		'time':120,
+		'bgIndex': 0,
+		'time': 120,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 150,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'layer02':{
+	'layer02': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
-		'bgIndex':0,
-		'time':180,
+		'bgIndex': 0,
+		'time': 180,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 150,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'layer03':{
+	'layer03': {
 		'showCloud': false,
 		'bossLayer': false,
 		'isExtra': false,
-		'bgIndex':1,
-		'time':240,
+		'bgIndex': 1,
+		'time': 240,
 		'layerUrl': 'LAYER01',
-		'reward':{
+		'reward': {
 			'coin': 150,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'layer04':{
+	'layer04': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
-		'bgIndex':0,
-		'time':180,
+		'bgIndex': 0,
+		'time': 180,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 150,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'layer05':{
+	'layer05': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
-		'bgIndex':0,
-		'time':180,
+		'bgIndex': 0,
+		'time': 180,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 200,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'layer06':{
+	'layer06': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
-		'bgIndex':0,
-		'time':210,
+		'bgIndex': 0,
+		'time': 210,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 200,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'layer07':{
+	'layer07': {
 		'showCloud': false,
 		'bossLayer': false,
 		'isExtra': false,
-		'bgIndex':1,
-		'time':300,
+		'bgIndex': 1,
+		'time': 300,
 		'layerUrl': 'LAYER01',
-		'reward':{
+		'reward': {
 			'coin': 200,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'layer08':{
+	'layer08': {
 		'showCloud': true,
 		'bossLayer': true,
 		'isExtra': false,
-		'bgIndex':0,
-		'time':360,
+		'bgIndex': 0,
+		'time': 360,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 400,
 			'star': 3,
 			'strength': 2,
 			'lotterTicket': 3,
 		}
 	},
-	'layer09':{
+	'layer09': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
-		'bgIndex':0,
-		'time':180,
+		'bgIndex': 0,
+		'time': 180,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 200,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'layer10':{
+	'layer10': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
-		'bgIndex':0,
-		'time':180,
+		'bgIndex': 0,
+		'time': 180,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 200,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'layer11':{
+	'layer11': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
-		'bgIndex':0,
-		'time':240,
+		'bgIndex': 0,
+		'time': 240,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 250,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'layer12':{
+	'layer12': {
 		'showCloud': false,
 		'bossLayer': false,
 		'isExtra': false,
-		'bgIndex':1,
-		'time':240,
+		'bgIndex': 1,
+		'time': 240,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 250,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'layer13':{
+	'layer13': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
-		'bgIndex':0,
-		'time':300,
+		'bgIndex': 0,
+		'time': 300,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 250,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'layer14':{
+	'layer14': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
-		'bgIndex':0,
-		'time':240,
+		'bgIndex': 0,
+		'time': 240,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 250,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'layer15':{
+	'layer15': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
-		'bgIndex':0,
-		'time':240,
+		'bgIndex': 0,
+		'time': 240,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 300,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'layer16':{
+	'layer16': {
 		'showCloud': false,
 		'bossLayer': false,
 		'isExtra': false,
-		'bgIndex':1,
-		'time':240,
+		'bgIndex': 1,
+		'time': 240,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 300,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'layer17':{
+	'layer17': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
-		'bgIndex':0,
-		'time':240,
+		'bgIndex': 0,
+		'time': 240,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 300,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'layer18':{
+	'layer18': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
-		'bgIndex':0,
-		'time':300,
+		'bgIndex': 0,
+		'time': 300,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 300,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	
-	'minLayer01':{
+
+	'minLayer01': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 10,
-		'bgIndex':0,
-		'time':20,
+		'bgIndex': 0,
+		'time': 20,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 50,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		},
-		'level':[
-		    [0,10],
-			[11,50],
-			[51,100],
-			[100,100]
-	    ]
+		'level': [
+			[0, 10],
+			[11, 50],
+			[51, 100],
+			[100, 100]
+		]
 	},
-	'minLayer02':{
+	'minLayer02': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 15,
-		'bgIndex':0,
-		'time':20,
+		'bgIndex': 0,
+		'time': 20,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 100,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer03':{
+	'minLayer03': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 15,
-		'bgIndex':0,
-		'time':20,
+		'bgIndex': 0,
+		'time': 20,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 20,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer04':{
+	'minLayer04': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 20,
-		'bgIndex':0,
-		'time':20,
+		'bgIndex': 0,
+		'time': 20,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 20,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer05':{
+	'minLayer05': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 20,
-		'bgIndex':0,
-		'time':20,
+		'bgIndex': 0,
+		'time': 20,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 20,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer06':{
+	'minLayer06': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 20,
-		'bgIndex':0,
-		'time':20,
+		'bgIndex': 0,
+		'time': 20,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 40,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer07':{
+	'minLayer07': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 25,
-		'bgIndex':0,
-		'time':25,
+		'bgIndex': 0,
+		'time': 25,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 40,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer08':{
+	'minLayer08': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 20,
-		'bgIndex':0,
-		'time':20,
+		'bgIndex': 0,
+		'time': 20,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 40,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer09':{
+	'minLayer09': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 25,
-		'bgIndex':0,
-		'time':20,
+		'bgIndex': 0,
+		'time': 20,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 40,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer10':{
+	'minLayer10': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 30,
-		'bgIndex':0,
-		'time':20,
+		'bgIndex': 0,
+		'time': 20,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 40,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer11':{
+	'minLayer11': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 40,
-		'bgIndex':0,
-		'time':25,
+		'bgIndex': 0,
+		'time': 25,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 60,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer12':{
+	'minLayer12': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 30,
-		'bgIndex':0,
-		'time':25,
+		'bgIndex': 0,
+		'time': 25,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 60,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer13':{
+	'minLayer13': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 60,
-		'bgIndex':0,
-		'time':30,
+		'bgIndex': 0,
+		'time': 30,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 60,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer14':{
+	'minLayer14': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 60,
-		'bgIndex':0,
-		'time':40,
+		'bgIndex': 0,
+		'time': 40,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 60,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer15':{
+	'minLayer15': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 60,
-		'bgIndex':0,
-		'time':30,
+		'bgIndex': 0,
+		'time': 30,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 60,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer16':{
+	'minLayer16': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 60,
-		'bgIndex':0,
-		'time':45,
+		'bgIndex': 0,
+		'time': 45,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 80,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer17':{
+	'minLayer17': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 60,
-		'bgIndex':0,
-		'time':45,
+		'bgIndex': 0,
+		'time': 45,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 80,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer18':{
+	'minLayer18': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 111,
-		'bgIndex':0,
-		'time':60,
+		'bgIndex': 0,
+		'time': 60,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 80,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer19':{
+	'minLayer19': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 80,
-		'bgIndex':0,
-		'time':60,
+		'bgIndex': 0,
+		'time': 60,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 80,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer20':{
+	'minLayer20': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 50,
-		'bgIndex':0,
-		'time':90,
+		'bgIndex': 0,
+		'time': 90,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 80,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer21':{
+	'minLayer21': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
-		'bgIndex':0,
-		'time':65,
+		'bgIndex': 0,
+		'time': 65,
 		'layerUrl': 'LAYER',
 		'iq': 50,
-		'reward':{
+		'reward': {
 			'coin': 100,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer22':{
+	'minLayer22': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 150,
-		'bgIndex':0,
-		'time':60,
+		'bgIndex': 0,
+		'time': 60,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 100,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer23':{
+	'minLayer23': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 100,
-		'bgIndex':0,
-		'time':55,
+		'bgIndex': 0,
+		'time': 55,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 100,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer24':{
+	'minLayer24': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 180,
-		'bgIndex':0,
-		'time':90,
+		'bgIndex': 0,
+		'time': 90,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 100,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer25':{
+	'minLayer25': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 50,
-		'bgIndex':0,
-		'time':50,
+		'bgIndex': 0,
+		'time': 50,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 100,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer26':{
+	'minLayer26': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 240,
-		'bgIndex':0,
-		'time':120,
+		'bgIndex': 0,
+		'time': 120,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 120,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer27':{
+	'minLayer27': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 150,
-		'bgIndex':0,
-		'time':60,
+		'bgIndex': 0,
+		'time': 60,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 120,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer28':{
+	'minLayer28': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 88,
-		'bgIndex':0,
-		'time':65,
+		'bgIndex': 0,
+		'time': 65,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 120,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer29':{
+	'minLayer29': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
 		'iq': 66,
-		'bgIndex':0,
-		'time':40,
+		'bgIndex': 0,
+		'time': 40,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 120,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'minLayer30':{
+	'minLayer30': {
 		'showCloud': true,
 		'bossLayer': false,
 		'isExtra': false,
-		'bgIndex':0,
-		'time':50,
+		'bgIndex': 0,
+		'time': 50,
 		'layerUrl': 'LAYER',
 		'iq': 50,
-		'reward':{
+		'reward': {
 			'coin': 120,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	
-	'extraLayer00_01':{
+
+	'extraLayer00_01': {
 		'showCloud': false,
 		'bossLayer': false,
 		'isExtra': true,
-		'bgIndex':1,
+		'bgIndex': 1,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 0,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'extraLayer01_01':{
+	'extraLayer01_01': {
 		'showCloud': false,
 		'bossLayer': false,
 		'isExtra': true,
-		'bgIndex':1,
+		'bgIndex': 1,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 0,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'extraLayer03_01':{
+	'extraLayer03_01': {
 		'showCloud': false,
 		'bossLayer': false,
 		'isExtra': true,
-		'bgIndex':1,
+		'bgIndex': 1,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 0,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'extraLayer05_01':{
+	'extraLayer05_01': {
 		'showCloud': false,
 		'bossLayer': false,
 		'isExtra': true,
-		'bgIndex':1,
+		'bgIndex': 1,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 0,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'extraLayer07_01':{
+	'extraLayer07_01': {
 		'showCloud': false,
 		'bossLayer': false,
 		'isExtra': true,
-		'bgIndex':1,
+		'bgIndex': 1,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 0,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'extraLayer10_01':{
+	'extraLayer10_01': {
 		'showCloud': false,
 		'bossLayer': false,
 		'isExtra': true,
-		'bgIndex':1,
+		'bgIndex': 1,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 0,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'extraLayer12_01':{
+	'extraLayer12_01': {
 		'showCloud': false,
 		'bossLayer': false,
 		'isExtra': true,
-		'bgIndex':1,
+		'bgIndex': 1,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 0,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'extraLayer12_02':{
+	'extraLayer12_02': {
 		'showCloud': false,
 		'bossLayer': false,
 		'isExtra': true,
-		'bgIndex':1,
+		'bgIndex': 1,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 0,
 			'star': 0,
 			'strength': 0,
 			'lotterTicket': 0,
 		}
 	},
-	'extraLayer15_01':{
+	'extraLayer15_01': {
 		'showCloud': false,
 		'bossLayer': false,
 		'isExtra': true,
-		'bgIndex':1,
+		'bgIndex': 1,
 		'layerUrl': 'LAYER',
-		'reward':{
+		'reward': {
 			'coin': 0,
 			'star': 0,
 			'strength': 0,
@@ -1149,153 +1146,153 @@ ObjConfig.LAYERCONF = {
 };
 
 ObjConfig.FOOD = {
-	'apple':{
+	'apple': {
 		SCORE: 50,
-        DESC:'',
-    },
-	'banana':{
+		DESC: '',
+	},
+	'banana': {
 		SCORE: 80,
-        DESC:'',
-    },
-	'melon':{
+		DESC: '',
+	},
+	'melon': {
 		SCORE: 100,
-        DESC:'',
-    },
-	'orange':{
+		DESC: '',
+	},
+	'orange': {
 		SCORE: 120,
-        DESC:'',
-    },
-	'pineapple':{
+		DESC: '',
+	},
+	'pineapple': {
 		SCORE: 150,
-        DESC:'',
-    },
-	'strawberry':{
+		DESC: '',
+	},
+	'strawberry': {
 		SCORE: 180,
-        DESC:'',
-    },
+		DESC: '',
+	},
 };
 
 ObjConfig.ROAD = {
-	'tile1':{
+	'tile1': {
 		SCORE: 50,
-        DESC:'',
-    },
-	'tile2':{
+		DESC: '',
+	},
+	'tile2': {
 		SCORE: 80,
-        DESC:'',
-    },
-	'tile3':{
-        DESC:'',
-    },
-	'tile4':{
-        DESC:'',
-    },
-	'brick1':{
-        DESC:'',
-    },
-	'brick2':{
-        DESC:'',
-    },
-	'brick3':{
-        DESC:'',
-    },
-	'brick4':{
-        DESC:'',
-    },
-	'brick5':{
-        DESC:'',
-    },
-	'brick6':{
-        DESC:'',
-    },	
-	'brick7':{
-        DESC:'',
-    },
-	'brick8':{
-        DESC:'',
-    },
-	'brick9':{
-        DESC:'',
-    },
-	'brick10':{
-        DESC:'',
-    },
-	'brick11':{
-        DESC:'',
-    },
-	'brick12':{
-        DESC:'',
-    },
-	'brick13':{
-        DESC:'',
-    },
-	'brick14':{
-        DESC:'',
-    },
-	'brick15':{
-        DESC:'',
-    },
-	'brick16':{
-        DESC:'',
-    },
-	'palmTree':{
-        DESC:'',
-    },
-	'woodRoad':{
-        DESC:'',
-    },
-	'stoneRoad':{
-        DESC:'',
-    },
-	'turret':{
+		DESC: '',
+	},
+	'tile3': {
+		DESC: '',
+	},
+	'tile4': {
+		DESC: '',
+	},
+	'brick1': {
+		DESC: '',
+	},
+	'brick2': {
+		DESC: '',
+	},
+	'brick3': {
+		DESC: '',
+	},
+	'brick4': {
+		DESC: '',
+	},
+	'brick5': {
+		DESC: '',
+	},
+	'brick6': {
+		DESC: '',
+	},
+	'brick7': {
+		DESC: '',
+	},
+	'brick8': {
+		DESC: '',
+	},
+	'brick9': {
+		DESC: '',
+	},
+	'brick10': {
+		DESC: '',
+	},
+	'brick11': {
+		DESC: '',
+	},
+	'brick12': {
+		DESC: '',
+	},
+	'brick13': {
+		DESC: '',
+	},
+	'brick14': {
+		DESC: '',
+	},
+	'brick15': {
+		DESC: '',
+	},
+	'brick16': {
+		DESC: '',
+	},
+	'palmTree': {
+		DESC: '',
+	},
+	'woodRoad': {
+		DESC: '',
+	},
+	'stoneRoad': {
+		DESC: '',
+	},
+	'turret': {
 		ATTACK_RATE: 46,
-        DESC:'',
-    },
-	'turret2':{
+		DESC: '',
+	},
+	'turret2': {
 		ATTACK_RATE: 46,
-        DESC:'',
-    },
-	'conduitUp':{
+		DESC: '',
+	},
+	'conduitUp': {
 		COLLISION_DIS: 15,
-        DESC:'',
-    },
-	'conduitRight':{
+		DESC: '',
+	},
+	'conduitRight': {
 		COLLISION_DIS: 15,
-        DESC:'',
-    },
-	'conduitDown':{
+		DESC: '',
+	},
+	'conduitDown': {
 		COLLISION_DIS: 15,
-        DESC:'',
-    },
-	'conduitLeft':{
+		DESC: '',
+	},
+	'conduitLeft': {
 		COLLISION_DIS: 15,
-        DESC:'',
-    },
-	'conduitUp2':{
-        DESC:'',
-    },
-	'conduitDown2':{
-        DESC:'',
-    },
-	'conduitBody1':{
-        DESC:'',
-    },
-	'conduitBody2':{
-        DESC:'',
-    },
-    'dropRoad':{
+		DESC: '',
+	},
+	'conduitUp2': {
+		DESC: '',
+	},
+	'conduitDown2': {
+		DESC: '',
+	},
+	'conduitBody1': {
+		DESC: '',
+	},
+	'conduitBody2': {
+		DESC: '',
+	},
+	'dropRoad': {
 		DROP_START_SPEED: 1,
-        DROP_INCREMENT: 1,
+		DROP_INCREMENT: 1,
 		DROP_MAX_SPEED: 25,
 		WAIT_TIME: 20,
-        DESC:'',
-    },
-	'hideRoad':{
+		DESC: '',
+	},
+	'hideRoad': {
 		SHOW_TIME: 180,
 		HIDE_TIME: 150,
-        DESC:'',
-    },
-	'box':{
+		DESC: '',
+	},
+	'box': {
 		KEY: 'BOX',
 		HURT: 1,
 		SPRING_JUMP_SPEED: 28,
@@ -1308,9 +1305,9 @@ ObjConfig.ROAD = {
 		FIRE_SPEED: 10,
 		UP_FIRE_SPEED: 8,
 		HURT: 1,
-        DESC:'',
-    },
-	'wooden':{
+		DESC: '',
+	},
+	'wooden': {
 		KEY: 'WOODEN',
 		SCORE: 50,
 		DROP_INCREMENT: 0.5,
@@ -1321,9 +1318,9 @@ ObjConfig.ROAD = {
 		FIRE_SPEED: 12,
 		UP_FIRE_SPEED: 10,
 		HURT: 1,
-        DESC:'',
-    },
-	'stone':{
+		DESC: '',
+	},
+	'stone': {
 		KEY: 'STONE',
 		SPRING_JUMP_SPEED: 25,
 		SPRING_MOVE_SPEED: 15,
@@ -1335,9 +1332,9 @@ ObjConfig.ROAD = {
 		FIRE_SPEED: 10,
 		UP_FIRE_SPEED: 25,
 		HURT: 1,
-        DESC:'',
-    },
-	'bomb':{
+		DESC: '',
+	},
+	'bomb': {
 		KEY: 'BOMB',
 		SPRING_JUMP_SPEED: 25,
 		JUMP_INCREMENT: 1,
@@ -1347,9 +1344,9 @@ ObjConfig.ROAD = {
 		FIRE_SPEED: 10,
 		UP_FIRE_SPEED: 28,
 		HURT: 0,
-        DESC:'',
-    },
-	'ball':{
+		DESC: '',
+	},
+	'ball': {
 		KEY: 'BALL',
 		HURT: 1,
 		SCORE: 100,
@@ -1369,9 +1366,9 @@ ObjConfig.ROAD = {
 		FIRE_SPEED: 10,
 		FIRE_INCREMENT: 0.2,
 		HURT: 1,
-        DESC:'',
-    },
-	'irolBall':{
+		DESC: '',
+	},
+	'irolBall': {
 		KEY: 'IROLBALL',
 		ROTATE_SPEED: 24,
 		ROTATE_INCREMENT: 0.2,
@@ -1388,287 +1385,287 @@ ObjConfig.ROAD = {
 		FIRE_SPEED: 10,
 		FIRE_INCREMENT: 0.1,
 		HURT: 1,
-        DESC:'',
-    },
-	'fireRoad':{
+		DESC: '',
+	},
+	'fireRoad': {
 		HURT: 1,
 		CRASH: true,
-        DESC:'',
-    },
-	'moveRoad':{
-		
-        DESC:'',
-    },
-	'spring':{
-        DESC:'',
-    },
-	'springL':{
+		DESC: '',
+	},
+	'moveRoad': {
+
+		DESC: '',
+	},
+	'spring': {
+		DESC: '',
+	},
+	'springL': {
 		RECT_WIDTH: 30,
-        DESC:'',
-    },
-	'springR':{
+		DESC: '',
+	},
+	'springR': {
 		RECT_WIDTH: 30,
-        DESC:'',
-    },
-	'springLR':{
+		DESC: '',
+	},
+	'springLR': {
 		RECT_WIDTH: 30,
-        DESC:'',
-    },
-	'headRoad':{
-        HURT: 1,
+		DESC: '',
+	},
+	'headRoad': {
+		HURT: 1,
 		RISE_SPEED: 1.5,
 		JUMP_MAX_SPEED: 30,
-        JUMP_INCREMENT: 1,
+		JUMP_INCREMENT: 1,
 		DROP_MAX_SPEED: 30,
 		DROP_INCREMENT: 1,
 		WAIT_TIME: 40,
-        SCALEX: true,
-        DESC:'',
-    },
-	'spikeHeadRoad':{
-        HURT: 1,
+		SCALEX: true,
+		DESC: '',
+	},
+	'spikeHeadRoad': {
+		HURT: 1,
 		RISE_SPEED: 2,
 		JUMP_MAX_SPEED: 30,
-        JUMP_INCREMENT: 1,
+		JUMP_INCREMENT: 1,
 		DROP_MAX_SPEED: 30,
 		DROP_INCREMENT: 1,
 		WAIT_TIME: 40,
-        SCALEX: true,
-        DESC:'',
-    },
+		SCALEX: true,
+		DESC: '',
+	},
 };
 
-ObjConfig.THORN ={
-	'axe':{
-        HURT: 1,
+ObjConfig.THORN = {
+	'axe': {
+		HURT: 1,
 		TIME_LIMMIT: 180,
-        DESC:'',
-    },
-	'thornBall':{
+		DESC: '',
+	},
+	'thornBall': {
 		HURT: 1,
 		SHAKE_MAX_SPEED: 5,
 		SHAKE_INCREMENT: 1,
-        DESC:'',
-    },
-	'thorn':{
-        HURT: 1,
-        DESC:'',
-    },
-	'saw':{
+		DESC: '',
+	},
+	'thorn': {
+		HURT: 1,
+		DESC: '',
+	},
+	'saw': {
 		ROTATE_SPEED: 6,
-        HURT: 1,
-        DESC:'',
-    },
-	'saw2':{
+		HURT: 1,
+		DESC: '',
+	},
+	'saw2': {
 		ROTATE_SPEED: 6,
-        HURT: 1,
-        DESC:'',
-    },
-	'fireThorn1':{
+		HURT: 1,
+		DESC: '',
+	},
+	'fireThorn1': {
 		HURT: 1,
 		IS_POINT: true,
 		ATTACK_LIMMIT_X: 100,
 		ATTACK_LIMMIT_Y: 300,
-        FIRE_MAX_SPEED: 8,
-        DESC:'',
-    },
-	'fireThorn2':{
+		FIRE_MAX_SPEED: 8,
+		DESC: '',
+	},
+	'fireThorn2': {
 		HURT: 1,
 		IS_POINT: true,
 		ATTACK_LIMMIT_X: 100,
 		ATTACK_LIMMIT_Y: 300,
-        FIRE_MAX_SPEED: 8,
-        DESC:'',
-    },
-	'fireThorn3':{
+		FIRE_MAX_SPEED: 8,
+		DESC: '',
+	},
+	'fireThorn3': {
 		HURT: 1,
 		IS_POINT: true,
 		ATTACK_LIMMIT_X: 100,
 		ATTACK_LIMMIT_Y: 300,
-        FIRE_INCREMENT: 0.8,
-        FIRE_MAX_SPEED: 20,
-        DESC:'',
-    },
-	'fireThorn4':{
+		FIRE_INCREMENT: 0.8,
+		FIRE_MAX_SPEED: 20,
+		DESC: '',
+	},
+	'fireThorn4': {
 		HURT: 1,
 		IS_POINT: true,
 		ATTACK_LIMMIT_X: 100,
 		ATTACK_LIMMIT_Y: 300,
-        FIRE_MAX_SPEED: 8,
-        DESC:'',
-    },
-	'moveThorn1':{
+		FIRE_MAX_SPEED: 8,
+		DESC: '',
+	},
+	'moveThorn1': {
 		HURT: 1,
 		IS_POINT: true,
-        MOVE_SPEED: 2,
-        DESC:'',
-    },
-	'moveThorn2':{
+		MOVE_SPEED: 2,
+		DESC: '',
+	},
+	'moveThorn2': {
 		HURT: 1,
 		IS_POINT: true,
-        MOVE_SPEED: 2,
-        DESC:'',
-    },
-	'moveThorn3':{
+		MOVE_SPEED: 2,
+		DESC: '',
+	},
+	'moveThorn3': {
 		HURT: 1,
 		IS_POINT: true,
-        MOVE_SPEED: 2,
-        DESC:'',
-    },
-	'moveThorn4':{
+		MOVE_SPEED: 2,
+		DESC: '',
+	},
+	'moveThorn4': {
 		HURT: 1,
 		IS_POINT: true,
-        MOVE_SPEED: 2,
-        DESC:'',
-    },
+		MOVE_SPEED: 2,
+		DESC: '',
+	},
 };
 
 ObjConfig.OTHER = {
-	'endArrow':{
-        DESC:'',
-    },
-	'arrow':{
-        DESC:'',
-    },
-	'diamond':{
+	'endArrow': {
+		DESC: '',
+	},
+	'arrow': {
+		DESC: '',
+	},
+	'diamond': {
 		SCORE: 1000,
-        DESC:'',
-    },
-	'brickDebris':{
+		DESC: '',
+	},
+	'brickDebris': {
 		JUMP_INCREMENT: 0.8,
 		JUMP_MAX_SPEED: 12,
-        DESC:'',
-    },
-	'bombBlast':{
-        LIMMIT_TIME: 6,
+		DESC: '',
+	},
+	'bombBlast': {
+		LIMMIT_TIME: 6,
 		HURT: 1,
 		BLAST: true,
-        DESC:'',
-    },
-	'collectBlast':{
-        LIMMIT_TIME: 4,
-        DESC:'',
-    },
-	'monsterBlast':{
-        LIMMIT_TIME: 6,
-        DESC:'',
-    },
-	'eye':{
+		DESC: '',
+	},
+	'collectBlast': {
+		LIMMIT_TIME: 4,
+		DESC: '',
+	},
+	'monsterBlast': {
+		LIMMIT_TIME: 6,
+		DESC: '',
+	},
+	'eye': {
 		RATE_TIME: 12,
 		RATE_INTERVAL_TIME: 40,
 		BLINK_TIME: 2,
 		WAIT_TIME: 120,
 		WAIT_RANDOM: 180,
-        DESC:'',
-    },
-	'coin':{
+		DESC: '',
+	},
+	'coin': {
 		SCORE: 100,
-        JUMP_INCREMENT: 0.8,
-        JUMP_MAX_SPEED: 16,
-        DESC:'',
-    },
-	'noteCoin':{
+		JUMP_INCREMENT: 0.8,
+		JUMP_MAX_SPEED: 16,
+		DESC: '',
+	},
+	'noteCoin': {
 		SCORE: 100,
-        JUMP_INCREMENT: 0.5,
-        JUMP_MAX_SPEED: 16,
+		JUMP_INCREMENT: 0.5,
+		JUMP_MAX_SPEED: 16,
 		DROP_MAX_SPEED: 25,
 		DROP_START_SPEED: 0,
 		DROP_INCREMENT: 1,
-        DESC:'',
-    },
-	'starIcon':{
+		DESC: '',
+	},
+	'starIcon': {
 		INVINCIBLE_TIME: 496,
 		JUMP_INCREMENT: 0.2,
-        JUMP_MAX_SPEED: 8,
-        DESC:'',
-    },
-	'clockIcon':{
+		JUMP_MAX_SPEED: 8,
+		DESC: '',
+	},
+	'clockIcon': {
 		STOP_TIME: 620,
 		JUMP_INCREMENT: 0.2,
-        JUMP_MAX_SPEED: 8,
-        DESC:'',
-    },
-	'shieldIcon':{
+		JUMP_MAX_SPEED: 8,
+		DESC: '',
+	},
+	'shieldIcon': {
 		CLASSIC_SHIELD_TIME: 930,
 		SHIELD_TIME: 620,
 		JUMP_INCREMENT: 0.2,
-        JUMP_MAX_SPEED: 8,
-        DESC:'',
-    },
-	'waterIcon':{
+		JUMP_MAX_SPEED: 8,
+		DESC: '',
+	},
+	'waterIcon': {
 		SLOW_TIME: 620,
 		JUMP_INCREMENT: 0.2,
-        JUMP_MAX_SPEED: 8,
+		JUMP_MAX_SPEED: 8,
 		COLOR: '#9592F0',
-        DESC:'',
-    },
-	'magnetIcon':{
+		DESC: '',
+	},
+	'magnetIcon': {
 		MAGNET_TIME: 806,
 		MAGNET_LIMMIT: 400,
 		JUMP_INCREMENT: 0.2,
-        JUMP_MAX_SPEED: 8,
-        DESC:'',
-    },
-	'noteIcon':{
+		JUMP_MAX_SPEED: 8,
+		DESC: '',
+	},
+	'noteIcon': {
 		ADD_RATE: 5,
 		LIMMIT_Y: 300,
 		LIMMIT_X: 60,
 		JUMP_INCREMENT: 0.2,
-        JUMP_MAX_SPEED: 8,
-        DESC:'',
-    },
-	'ladder':{
-        DESC:'',
-    },
-	'star':{
+		JUMP_MAX_SPEED: 8,
+		DESC: '',
+	},
+	'ladder': {
+		DESC: '',
+	},
+	'star': {
 		SCORE: 200,
-        DESC:'',
-    },
-	'door':{
-        DESC:'',
-    },
+		DESC: '',
+	},
+	'door': {
+		DESC: '',
+	},
 };
 
 ObjConfig.BULLET = {
-	'plantBullet':{
+	'plantBullet': {
 		JUMP_MAX_SPEED: 20,
-        JUMP_INCREMENT: 0.8,
+		JUMP_INCREMENT: 0.8,
 		DROP_MAX_SPEED: 30,
-        DROP_INCREMENT: 0.8,
-        MOVE_SPEED: 4,
-        HURT: 1,
-        DESC:'',
-    },
-	'chestBullet':{
-		JUMP_MAX_SPEED: 15,
-        JUMP_INCREMENT: 1,
-		DROP_MAX_SPEED: 50,
-        DROP_INCREMENT: 1,
-        MOVE_SPEED: 3.5,
-        HURT: 1,
-        DESC:'',
-    },
-	'turretBullet':{
+		DROP_INCREMENT: 0.8,
 		MOVE_SPEED: 4,
-        HURT: 1,
-        DESC:'',
-    },
-	'beeBullet':{
-        MIN_MOVE_SPEED: 1,
+		HURT: 1,
+		DESC: '',
+	},
+	'chestBullet': {
+		JUMP_MAX_SPEED: 15,
+		JUMP_INCREMENT: 1,
+		DROP_MAX_SPEED: 50,
+		DROP_INCREMENT: 1,
+		MOVE_SPEED: 3.5,
+		HURT: 1,
+		DESC: '',
+	},
+	'turretBullet': {
+		MOVE_SPEED: 4,
+		HURT: 1,
+		DESC: '',
+	},
+	'beeBullet': {
+		MIN_MOVE_SPEED: 1,
 		MAX_MOVE_SPEED: 6,
-        HURT: 1,
-        DESC:'',
-    },
-	'batBullet':{
-        MOVE_SPEED: 5,
-        HURT: 1,
-        DESC:'',
-    },
+		HURT: 1,
+		DESC: '',
+	},
+	'batBullet': {
+		MOVE_SPEED: 5,
+		HURT: 1,
+		DESC: '',
+	},
 };
 
 ObjConfig.MONSTER = {
-    'player':{
-        BLOOD: 3,
+	'player': {
+		BLOOD: 3,
 		ENTER_SPEED: 1.5,
 		ENTER_LAYER_LIMMIT: 70,
 		OUT_LAYER_LIMMIT: 45,
@@ -1679,428 +1676,428 @@ ObjConfig.MONSTER = {
 		JUMP_MAX_SPEED: 26,
 		DROP_MAX_SPEED: 24,
 		JUMP_SLOW_SPEED: 20,
-        JUMP_INCREMENT: 1.2,
-        JUMP_MAX_SPEED2: 23,
-        JUMP_INCREMENT2: 0.3,
+		JUMP_INCREMENT: 1.2,
+		JUMP_MAX_SPEED2: 23,
+		JUMP_INCREMENT2: 0.3,
 		JUMP_MAX_SPEED3: 18,
 		JUMP_INCREMENT3: 0.4,
-        JUMP_ADD_INCREMENT: 0.1,
-        DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 10,
-        DEAD_MOVE_SPEED: 0,
-        JUMP_MOVE_SPEED: 2,
+		JUMP_ADD_INCREMENT: 0.1,
+		DEAD_INCREMENT: 0.5,
+		DEAD_MAX_SPEED: 10,
+		DEAD_MOVE_SPEED: 0,
+		JUMP_MOVE_SPEED: 2,
 		FLY_MOVE_SPEED: 1.2,
 		FLY_FAST_SPEED: 2,
-        COLLISION_SPEED1: 1,
-        COLLISION_SPEED2: 2.4,
+		COLLISION_SPEED1: 1,
+		COLLISION_SPEED2: 2.4,
 		LDLE_LIMMIT: 60,
 		FLY_LIMMIT: 800,
-        HURT_LIMMIT: 40,
+		HURT_LIMMIT: 40,
 		FIRE_LIMMIT: 15,
 		FLICKER_LIMMIT: 240,
 		DIZZINESS_LIMMIT: 300,
 		MOVE_SLOW_SPEED: 3,
 		FIX_SPEED: 1.5,
-        MOVE_SPEED: 6,
+		MOVE_SPEED: 6,
 		MOVE_SPEED2: 8,
 		MOVE_SPEED3: 10,
 		MOVE_INCREMENT: 0.25,
 		MOVE_STOP_INCREMENT: 0.35,
-        SCALEX: true,
-        TURN: true,
-        DESC:'',
-    },
-    'slug':{
+		SCALEX: true,
+		TURN: true,
+		DESC: '',
+	},
+	'slug': {
 		SPRING_JUMP_SPEED: 25,
-        SCORE: 50,
-        DROP_INCREMENT: 0.8,
-        DROP_MAX_SPEED: 12,
-        DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 10,
-        DEAD_MOVE_SPEED: 3,
-        MOVE_SPEED: 0.2,
-        HURT: 1,
-        SCALEX: true,
-        DESC:'',
-    },
-	'snake':{
+		SCORE: 50,
+		DROP_INCREMENT: 0.8,
+		DROP_MAX_SPEED: 12,
+		DEAD_INCREMENT: 0.5,
+		DEAD_MAX_SPEED: 10,
+		DEAD_MOVE_SPEED: 3,
+		MOVE_SPEED: 0.2,
+		HURT: 1,
+		SCALEX: true,
+		DESC: '',
+	},
+	'snake': {
 		SPRING_JUMP_SPEED: 28,
-        SCORE: 80,
+		SCORE: 80,
 		JUMP_INCREMENT: 0.7,
 		JUMP_MAX_SPEED: 14,
-        DROP_INCREMENT: 0.5,
-        DROP_MAX_SPEED: 12,
-        DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 12,
-        DEAD_MOVE_SPEED: 3,
-        MOVE_SPEED: 1.2,
-        HURT: 1,
-        SCALEX: true,
-        DESC:'',
-    },
-	'bigSnake':{
+		DROP_INCREMENT: 0.5,
+		DROP_MAX_SPEED: 12,
+		DEAD_INCREMENT: 0.5,
+		DEAD_MAX_SPEED: 12,
+		DEAD_MOVE_SPEED: 3,
+		MOVE_SPEED: 1.2,
+		HURT: 1,
+		SCALEX: true,
+		DESC: '',
+	},
+	'bigSnake': {
 		SPRING_JUMP_SPEED: 28,
-        SCORE: 100,
+		SCORE: 100,
 		JUMP_INCREMENT: 0.7,
 		JUMP_MAX_SPEED: 14,
-        DROP_INCREMENT: 0.5,
-        DROP_MAX_SPEED: 12,
-        DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 12,
-        DEAD_MOVE_SPEED: 3,
-        MOVE_SPEED: 2,
-        HURT: 1,
-        SCALEX: true,
-        DESC:'',
-    },
-	'bigSnake2':{
+		DROP_INCREMENT: 0.5,
+		DROP_MAX_SPEED: 12,
+		DEAD_INCREMENT: 0.5,
+		DEAD_MAX_SPEED: 12,
+		DEAD_MOVE_SPEED: 3,
+		MOVE_SPEED: 2,
+		HURT: 1,
+		SCALEX: true,
+		DESC: '',
+	},
+	'bigSnake2': {
 		SPRING_JUMP_SPEED: 28,
-        SCORE: 100,
+		SCORE: 100,
 		JUMP_INCREMENT: 0.7,
 		JUMP_MAX_SPEED: 14,
-        DROP_INCREMENT: 0.5,
-        DROP_MAX_SPEED: 12,
-        DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 12,
-        DEAD_MOVE_SPEED: 3,
-        MOVE_SPEED: 2,
-        HURT: 1,
-        SCALEX: true,
-        DESC:'',
-    },
-	'wolf':{
+		DROP_INCREMENT: 0.5,
+		DROP_MAX_SPEED: 12,
+		DEAD_INCREMENT: 0.5,
+		DEAD_MAX_SPEED: 12,
+		DEAD_MOVE_SPEED: 3,
+		MOVE_SPEED: 2,
+		HURT: 1,
+		SCALEX: true,
+		DESC: '',
+	},
+	'wolf': {
 		SPRING_JUMP_SPEED: 28,
-        SCORE: 80,
+		SCORE: 80,
 		JUMP_INCREMENT: 0.7,
-		JUMP_MAX_SPEED: 14,
-        DROP_INCREMENT: 0.6,
-        DROP_MAX_SPEED: 12,
-        DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 10,
-        DEAD_MOVE_SPEED: 3,
-        MOVE_SPEED: 1.5,
-        HURT: 1,
-        SCALEX: true,
-        DESC:'',
-    },
-	'rino':{
-		SPRING_JUMP_SPEED: 28,
-        SCORE: 100,
-		JUMP_INCREMENT: 0.7,
-		JUMP_MAX_SPEED: 14,
-        DROP_INCREMENT: 0.6,
-        DROP_MAX_SPEED: 12,
-        DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 10,
-        DEAD_MOVE_SPEED: 3,
-        MOVE_SPEED: 1.5,
-        HURT: 1,
-        SCALEX: true,
-        DESC:'',
-    },
-	'pig':{
-		SPRING_JUMP_SPEED: 25,
-        SCORE: 100,
-		JUMP_INCREMENT: 0.5,
-		JUMP_MAX_SPEED: 14,
-        DROP_INCREMENT: 0.6,
-        DROP_MAX_SPEED: 12,
-        DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 10,
-        DEAD_MOVE_SPEED: 3,
-        MOVE_SPEED: 2,
-        HURT: 1,
-        SCALEX: true,
-        DESC:'',
-    },
-	'redPig':{
-		SPRING_JUMP_SPEED: 25,
-		SCORE: 150,
-        JUMP_INCREMENT: 0.5,
 		JUMP_MAX_SPEED: 14,
 		DROP_INCREMENT: 0.6,
-        DROP_MAX_SPEED: 15,
+		DROP_MAX_SPEED: 12,
 		DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 10,
-        DEAD_MOVE_SPEED: 3,
+		DEAD_MAX_SPEED: 10,
+		DEAD_MOVE_SPEED: 3,
+		MOVE_SPEED: 1.5,
+		HURT: 1,
+		SCALEX: true,
+		DESC: '',
+	},
+	'rino': {
+		SPRING_JUMP_SPEED: 28,
+		SCORE: 100,
+		JUMP_INCREMENT: 0.7,
+		JUMP_MAX_SPEED: 14,
+		DROP_INCREMENT: 0.6,
+		DROP_MAX_SPEED: 12,
+		DEAD_INCREMENT: 0.5,
+		DEAD_MAX_SPEED: 10,
+		DEAD_MOVE_SPEED: 3,
+		MOVE_SPEED: 1.5,
+		HURT: 1,
+		SCALEX: true,
+		DESC: '',
+	},
+	'pig': {
+		SPRING_JUMP_SPEED: 25,
+		SCORE: 100,
+		JUMP_INCREMENT: 0.5,
+		JUMP_MAX_SPEED: 14,
+		DROP_INCREMENT: 0.6,
+		DROP_MAX_SPEED: 12,
+		DEAD_INCREMENT: 0.5,
+		DEAD_MAX_SPEED: 10,
+		DEAD_MOVE_SPEED: 3,
+		MOVE_SPEED: 2,
+		HURT: 1,
+		SCALEX: true,
+		DESC: '',
+	},
+	'redPig': {
+		SPRING_JUMP_SPEED: 25,
+		SCORE: 150,
+		JUMP_INCREMENT: 0.5,
+		JUMP_MAX_SPEED: 14,
+		DROP_INCREMENT: 0.6,
+		DROP_MAX_SPEED: 15,
+		DEAD_INCREMENT: 0.5,
+		DEAD_MAX_SPEED: 10,
+		DEAD_MOVE_SPEED: 3,
 		MOVE_SPEED: 1.5,
 		FAST_MOVE_SPEED: 3.5,
 		SCALEX: true,
 		TURN: true,
-        HURT: 1,
-        DESC:'',
-    },
-	'greenPig':{
+		HURT: 1,
+		DESC: '',
+	},
+	'greenPig': {
 		SPRING_JUMP_SPEED: 25,
 		SCORE: 200,
-        JUMP_INCREMENT: 0.5,
+		JUMP_INCREMENT: 0.5,
 		JUMP_MAX_SPEED: 16,
 		DROP_INCREMENT: 0.6,
-        DROP_MAX_SPEED: 15,
+		DROP_MAX_SPEED: 15,
 		DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 10,
-        DEAD_MOVE_SPEED: 3,
+		DEAD_MAX_SPEED: 10,
+		DEAD_MOVE_SPEED: 3,
 		MOVE_SPEED: 2,
 		FAST_MOVE_SPEED: 4,
 		JUMP_LIMMIT: 350,
 		START_LIMMIT: 150,
 		SCALEX: true,
 		TURN: true,
-        HURT: 1,
-        DESC:'',
-    },
-	'radish':{
+		HURT: 1,
+		DESC: '',
+	},
+	'radish': {
 		SPRING_JUMP_SPEED: 25,
 		SCORE: 240,
-        JUMP_INCREMENT: 0.5,
+		JUMP_INCREMENT: 0.5,
 		JUMP_MAX_SPEED: 16,
 		DROP_INCREMENT: 0.6,
-        DROP_MAX_SPEED: 15,
+		DROP_MAX_SPEED: 15,
 		DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 10,
-        DEAD_MOVE_SPEED: 3,
+		DEAD_MAX_SPEED: 10,
+		DEAD_MOVE_SPEED: 3,
 		MOVE_SPEED: 2,
 		FAST_MOVE_SPEED: 3,
 		JUMP_LIMMIT: 350,
 		START_LIMMIT: 150,
 		SCALEX: true,
 		TURN: true,
-        HURT: 1,
-        DESC:'',
-    },
-    'frog':{
+		HURT: 1,
+		DESC: '',
+	},
+	'frog': {
 		SPRING_JUMP_SPEED: 25,
-        SCORE: 150,
-        JUMP_INCREMENT: 0.8,
-        JUMP_MAX_SPEED: 16,
-        DROP_INCREMENT: 0.8,
-        DROP_MAX_SPEED: 16,
-        DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 10,
-        DEAD_MOVE_SPEED: 3,
-        JUMP_LIMMIT: 350,
+		SCORE: 150,
+		JUMP_INCREMENT: 0.8,
+		JUMP_MAX_SPEED: 16,
+		DROP_INCREMENT: 0.8,
+		DROP_MAX_SPEED: 16,
+		DEAD_INCREMENT: 0.5,
+		DEAD_MAX_SPEED: 10,
+		DEAD_MOVE_SPEED: 3,
+		JUMP_LIMMIT: 350,
 		START_LIMMIT: 150,
-        MOVE_SPEED: 3,
-        ROTATE_SPEED: 0,
-        HURT: 1,
-        SCALEX: true,
-        DESC:'',
-    },
-	'frog2':{
+		MOVE_SPEED: 3,
+		ROTATE_SPEED: 0,
+		HURT: 1,
+		SCALEX: true,
+		DESC: '',
+	},
+	'frog2': {
 		SPRING_JUMP_SPEED: 25,
-        SCORE: 200,
-        JUMP_INCREMENT: 0.8,
-        JUMP_MAX_SPEED: 18.4,
-        DROP_INCREMENT: 0.8,
-        DROP_MAX_SPEED: 16,
-        DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 10,
-        DEAD_MOVE_SPEED: 3,
-        JUMP_LIMMIT: 350,
+		SCORE: 200,
+		JUMP_INCREMENT: 0.8,
+		JUMP_MAX_SPEED: 18.4,
+		DROP_INCREMENT: 0.8,
+		DROP_MAX_SPEED: 16,
+		DEAD_INCREMENT: 0.5,
+		DEAD_MAX_SPEED: 10,
+		DEAD_MOVE_SPEED: 3,
+		JUMP_LIMMIT: 350,
 		START_LIMMIT: 150,
-        MOVE_SPEED: 4,
-        ROTATE_SPEED: 0,
-        HURT: 1,
-        SCALEX: true,
-        DESC:'',
-    },
-	'insect':{
+		MOVE_SPEED: 4,
+		ROTATE_SPEED: 0,
+		HURT: 1,
+		SCALEX: true,
+		DESC: '',
+	},
+	'insect': {
 		SPRING_JUMP_SPEED: 30,
-        SCORE: 100,
-        JUMP_INCREMENT: 1,
-        JUMP_MAX_SPEED: 20,
-        DROP_INCREMENT: 1,
-        DROP_MAX_SPEED: 20,
-        DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 10,
-        DEAD_MOVE_SPEED: 3,
-        MOVE_SPEED: 5,
-        ROTATE_SPEED: 0,
-        HURT: 1,
-        SCALEX: true,
-        DESC:'',
-    },
-    'scorpion':{
+		SCORE: 100,
+		JUMP_INCREMENT: 1,
+		JUMP_MAX_SPEED: 20,
+		DROP_INCREMENT: 1,
+		DROP_MAX_SPEED: 20,
+		DEAD_INCREMENT: 0.5,
+		DEAD_MAX_SPEED: 10,
+		DEAD_MOVE_SPEED: 3,
+		MOVE_SPEED: 5,
+		ROTATE_SPEED: 0,
+		HURT: 1,
+		SCALEX: true,
+		DESC: '',
+	},
+	'scorpion': {
 		SPRING_JUMP_SPEED: 25,
-        SCORE: 180,
+		SCORE: 180,
 		JUMP_INCREMENT: 0.8,
-        JUMP_MAX_SPEED: 16,
-        DROP_INCREMENT: 0.5,
-        DROP_MAX_SPEED: 12,
-        DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 12,
-        DEAD_MOVE_SPEED: 3,
-        MOVE_SPEED: 1.5,
-        FAST_MOVE_SPEED: 5,
-        ATTACK_LIMMIT: 400,
-        HURT: 1,
-        SCALEX: true,
-        TURN: true,
-        DESC:'',
-    },
-	'ant':{
+		JUMP_MAX_SPEED: 16,
+		DROP_INCREMENT: 0.5,
+		DROP_MAX_SPEED: 12,
+		DEAD_INCREMENT: 0.5,
+		DEAD_MAX_SPEED: 12,
+		DEAD_MOVE_SPEED: 3,
+		MOVE_SPEED: 1.5,
+		FAST_MOVE_SPEED: 5,
+		ATTACK_LIMMIT: 400,
+		HURT: 1,
+		SCALEX: true,
+		TURN: true,
+		DESC: '',
+	},
+	'ant': {
 		SPRING_JUMP_SPEED: 25,
-        SCORE: 150,
+		SCORE: 150,
 		JUMP_INCREMENT: 0.8,
-        JUMP_MAX_SPEED: 16,
-        DROP_INCREMENT: 0.5,
-        DROP_MAX_SPEED: 12,
-        DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 12,
-        DEAD_MOVE_SPEED: 3,
-        MOVE_SPEED: 1,
-        FAST_MOVE_SPEED: 4,
-        ATTACK_LIMMIT: 500,
-        HURT: 1,
-        SCALEX: true,
-        TURN: true,
-        DESC:'',
-    },
-    'attackFlower':{
+		JUMP_MAX_SPEED: 16,
+		DROP_INCREMENT: 0.5,
+		DROP_MAX_SPEED: 12,
+		DEAD_INCREMENT: 0.5,
+		DEAD_MAX_SPEED: 12,
+		DEAD_MOVE_SPEED: 3,
+		MOVE_SPEED: 1,
+		FAST_MOVE_SPEED: 4,
+		ATTACK_LIMMIT: 500,
+		HURT: 1,
+		SCALEX: true,
+		TURN: true,
+		DESC: '',
+	},
+	'attackFlower': {
 		SPRING_JUMP_SPEED: 25,
 		SCORE: 130,
 		JUMP_INCREMENT: 0.8,
-        JUMP_MAX_SPEED: 16,
+		JUMP_MAX_SPEED: 16,
 		DROP_INCREMENT: 0.5,
-        DROP_MAX_SPEED: 12,
-        DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 10,
-        DEAD_MOVE_SPEED: 3,
+		DROP_MAX_SPEED: 12,
+		DEAD_INCREMENT: 0.5,
+		DEAD_MAX_SPEED: 10,
+		DEAD_MOVE_SPEED: 3,
 		ATTACK_TIME: 200,
-        HURT: 1,
-        MOVE_SPEED: 0,
-        ATTACK_LIMMIT: 600,
-        DESC:'',
+		HURT: 1,
+		MOVE_SPEED: 0,
+		ATTACK_LIMMIT: 600,
+		DESC: '',
 		SCALEX: true,
-    },
+	},
 };
 
 ObjConfig.FLYMONSTER = {
-	'eatFlower':{
-        DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 10,
-        DEAD_MOVE_SPEED: 3,
-		RISE_SPEED: 0.5,
-        SLEEP_LIMMIT: 180,
-        HOLD_LIMMIT: 150,
-        DESC:'',
-        SCORE: 80,
-    },
-	'bird':{
-		SCORE: 100,
-        HURT: 1,
+	'eatFlower': {
 		DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 10,
-        DEAD_MOVE_SPEED: 3,
-        SCALEX: true,
-        DESC:'',
-    },
-	'bird2':{
+		DEAD_MAX_SPEED: 10,
+		DEAD_MOVE_SPEED: 3,
+		RISE_SPEED: 0.5,
+		SLEEP_LIMMIT: 180,
+		HOLD_LIMMIT: 150,
+		DESC: '',
+		SCORE: 80,
+	},
+	'bird': {
 		SCORE: 100,
-        HURT: 1,
+		HURT: 1,
+		DEAD_INCREMENT: 0.5,
+		DEAD_MAX_SPEED: 10,
+		DEAD_MOVE_SPEED: 3,
+		SCALEX: true,
+		DESC: '',
+	},
+	'bird2': {
+		SCORE: 100,
+		HURT: 1,
 		MIN_TIME: 120,
 		MAX_TIME: 280,
 		MOVE_SPEED: 2,
 		FAST_MOVE_SPEED: 15,
 		DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 10,
-        DEAD_MOVE_SPEED: 3,
-        SCALEX: true,
-        DESC:'',
-    },
-	'owt':{
+		DEAD_MAX_SPEED: 10,
+		DEAD_MOVE_SPEED: 3,
+		SCALEX: true,
+		DESC: '',
+	},
+	'owt': {
 		SCORE: 180,
-        HURT: 1,
+		HURT: 1,
 		STOP_LIMMIT: 50,
 		START_FIRE_LIMMIT: 120,
 		FIRE_LIMMIT: 280,
 		DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 10,
-        DEAD_MOVE_SPEED: 3,
-        SCALEX: false,
-        DESC:'',
-    },
-	'bee':{
+		DEAD_MAX_SPEED: 10,
+		DEAD_MOVE_SPEED: 3,
+		SCALEX: false,
+		DESC: '',
+	},
+	'bee': {
 		SCORE: 150,
-        HURT: 1,
+		HURT: 1,
 		MOVE_SPEED_Y: 2,
 		DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 10,
-        DEAD_MOVE_SPEED: 3,
+		DEAD_MAX_SPEED: 10,
+		DEAD_MOVE_SPEED: 3,
 		START_FIRE_LIMMIT: 70,
 		FIRE_LIMMIT: 150,
-        SCALEX: true,
-        DESC:'',
-    },
-	'bat':{
+		SCALEX: true,
+		DESC: '',
+	},
+	'bat': {
 		SCORE: 160,
-        HURT: 1,
+		HURT: 1,
 		DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 10,
-        DEAD_MOVE_SPEED: 3,
-        SCALEX: true,
-        DESC:'',
-    },
-	'bat2':{
+		DEAD_MAX_SPEED: 10,
+		DEAD_MOVE_SPEED: 3,
+		SCALEX: true,
+		DESC: '',
+	},
+	'bat2': {
 		SCORE: 160,
-        HURT: 1,
+		HURT: 1,
 		MOVE_SPEED_X: 3,
 		DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 10,
-        DEAD_MOVE_SPEED: 3,
+		DEAD_MAX_SPEED: 10,
+		DEAD_MOVE_SPEED: 3,
 		START_FIRE_LIMMIT: 120,
 		FIRE_LIMMIT: 180,
 		STOP_LIMMIT: 50,
-        SCALEX: true,
-        DESC:'',
-    },
-	'duck':{
+		SCALEX: true,
+		DESC: '',
+	},
+	'duck': {
 		SCORE: 120,
-        HURT: 1,
+		HURT: 1,
 		RISE_SPEED: 1.5,
 		JUMP_MAX_SPEED: 18,
-        JUMP_INCREMENT: 0.6,
+		JUMP_INCREMENT: 0.6,
 		DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 10,
-        DEAD_MOVE_SPEED: 3,
+		DEAD_MAX_SPEED: 10,
+		DEAD_MOVE_SPEED: 3,
 		WAIT_TIME: 40,
-        SCALEX: true,
-        DESC:'',
-    },
-	'trackBee':{
+		SCALEX: true,
+		DESC: '',
+	},
+	'trackBee': {
 		SCORE: 160,
-        HURT: 1,
+		HURT: 1,
 		RISE_SPEED: 1,
 		DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 10,
-        DEAD_MOVE_SPEED: 3,
-        SCALEX: true,
-        DESC:'',
-    },
-	'normalBee':{
+		DEAD_MAX_SPEED: 10,
+		DEAD_MOVE_SPEED: 3,
+		SCALEX: true,
+		DESC: '',
+	},
+	'normalBee': {
 		SCORE: 120,
-        HURT: 1,
+		HURT: 1,
 		RISE_SPEED: 1,
 		MOVE_SPEED_BASE: 1,
 		MOVE_SPEED_RANDOM: 3,
 		DEAD_INCREMENT: 0.5,
-        DEAD_MAX_SPEED: 10,
-        DEAD_MOVE_SPEED: 3,
+		DEAD_MAX_SPEED: 10,
+		DEAD_MOVE_SPEED: 3,
 		DIRECT_LIMMIT_BASE: 80,
 		DIRECT_LIMMIT_RANDOM: 320,
-        SCALEX: true,
-        DESC:'',
-    },
+		SCALEX: true,
+		DESC: '',
+	},
 };
 
 ObjConfig.BOSS = {
-	'beeNest':{
+	'beeNest': {
 		SCORE: 1000,
 		ADD_TIME_BASE: 100,
 		ADD_TIME_RANDOM: 600,
-        DESC:'',
+		DESC: '',
 		SCALEX: false,
-    },
+	},
 };
 
 module.exports = ObjConfig;

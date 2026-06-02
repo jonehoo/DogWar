@@ -1,14 +1,11 @@
-//电子邮件puhalskijsemen@gmail.com 
-//源码网站 开vpn全局模式打开 http://web3incubators.com/ 
- //电报https://t.me/gamecode999 
- //网页客服 http://web3incubators.com/kefu.html  
+//  Su.GuiCuan
 
 cc.Class({
-    extends: cc.Component,
+	extends: cc.Component,
 
-    properties: {
-        Type: 'NO',
-        OtherType1: 'NO',
+	properties: {
+		Type: 'NO',
+		OtherType1: 'NO',
 		OtherType2: 'NO',
 		OtherType3: 'NO',
 		Time: 0,
@@ -21,10 +18,10 @@ cc.Class({
 		RotateSpeed: 0,
 		MoveIncrement: 0,
 		JumpIncrement: 0,
-        RotateAngle: 0,
+		RotateAngle: 0,
 		DirectionX: true,
 		DirectionY: true,
-        Width: 0,
+		Width: 0,
 		Height: 0,
 		Radius: 0,
 		Range: 0,
@@ -32,8 +29,8 @@ cc.Class({
 		CollisionDis: 400,
 		IsCheckInit: true,
 		IsCheckRect: true,
-        IsInfinite: false,
-        IsOnce: false,
+		IsInfinite: false,
+		IsOnce: false,
 		IsConf: false,
 		IsBlast: false,
 		IsSkin: false,
@@ -48,38 +45,38 @@ cc.Class({
 		TargertLayer: '',
 		IsMainLayer: true,
 		IsPos: false,
-    },
+	},
 	//电子邮件puhalskijsemen@gmail.com
-//源码网站 开vpn全局模式打开 http://web3incubators.com/
-//电报https://t.me/gamecode999
+	//源码网站 开vpn全局模式打开 http://web3incubators.com/
+	//电报https://t.me/gamecode999
 
-	setConf(conf){
-        this.Type = conf.Type;
-        this.Time = conf.Time;
+	setConf(conf) {
+		this.Type = conf.Type;
+		this.Time = conf.Time;
 		this.MaxNum = conf.MaxNum;
 		this.IsCheckInit = conf.IsCheckInit;
-        this.IsCheckRect = conf.IsCheckRect;
+		this.IsCheckRect = conf.IsCheckRect;
 		this.IsInfinite = conf.IsInfinite;
-        this.IsOnce = conf.IsOnce;
+		this.IsOnce = conf.IsOnce;
 		this.IsConf = conf.IsConf;
 		this.IsBlast = conf.IsBlast;
 		this.IsSkin = conf.IsSkin;
 		this.IsPos = conf.IsPos;
 		this.Id = conf.Id;
-        this.config = {
-            'Type' : conf.Type,
+		this.config = {
+			'Type': conf.Type,
 			'OtherType1': conf.OtherType1,
-            'OtherType2' : conf.OtherType2,
-            'OtherType3' : conf.OtherType3,
-            'Time' : conf.Time,
-            'Num' : conf.Num,
-			'Num2' : conf.Num2,
-			'Num3' : conf.Num3,
+			'OtherType2': conf.OtherType2,
+			'OtherType3': conf.OtherType3,
+			'Time': conf.Time,
+			'Num': conf.Num,
+			'Num2': conf.Num2,
+			'Num3': conf.Num3,
 			'MaxNum': conf.MaxNum,
-            'MoveSpeed' : conf.MoveSpeed,
-			'JumpSpeed' : conf.JumpSpeed,
-			'RotateSpeed' : conf.RotateSpeed,
-			'MoveIncrement' : conf.MoveIncrement,
+			'MoveSpeed': conf.MoveSpeed,
+			'JumpSpeed': conf.JumpSpeed,
+			'RotateSpeed': conf.RotateSpeed,
+			'MoveIncrement': conf.MoveIncrement,
 			'JumpIncrement': conf.JumpIncrement,
 			'RotateAngle': conf.RotateAngle,
 			'DirectionX': conf.DirectionX,
@@ -109,22 +106,22 @@ cc.Class({
 			'IsMainLayer': conf.IsMainLayer,
 			'IsPos': conf.IsPos,
 		}
-		
-        this.init();
-    },
 
-    start () {
+		this.init();
+	},
+
+	start() {
 		/*this.config = {
-            'Type' : this.Type,
+			'Type' : this.Type,
 			'OtherType1': this.OtherType1,
-            'OtherType2' : this.OtherType2,
-            'OtherType3' : this.OtherType3,
-            'Time' : this.Time,
-            'Num' : this.Num,
+			'OtherType2' : this.OtherType2,
+			'OtherType3' : this.OtherType3,
+			'Time' : this.Time,
+			'Num' : this.Num,
 			'Num2' : this.Num2,
 			'Num3' : this.Num3,
 			'MaxNum': this.MaxNum,
-            'MoveSpeed' : this.MoveSpeed,
+			'MoveSpeed' : this.MoveSpeed,
 			'JumpSpeed' : this.JumpSpeed,
 			'RotateSpeed' : this.RotateSpeed,
 			'MoveIncrement' : this.MoveIncrement,
@@ -157,115 +154,115 @@ cc.Class({
 			'IsMainLayer': this.IsMainLayer,
 			'IsPos': this.IsPos,
 		}
-        this.init();*/
-    },
+		this.init();*/
+	},
 
-	init(){
-        this.count = 0;
-        this.index = 0;
-        this.isInit = !this.IsCheckInit;
+	init() {
+		this.count = 0;
+		this.index = 0;
+		this.isInit = !this.IsCheckInit;
 		this.checkStar();
-		if(this.isReviewStar){
+		if (this.isReviewStar) {
 			this.prefabConf = cc.GameConfig.PREFAB_TYPE.COIN;
-		}else{
+		} else {
 			this.prefabConf = cc.GameConfig.PREFAB_TYPE[this.Type];
-		    this.checkBoss();
-		}
-    },
-	
-	checkBoss(){
-	    if(this.prefabConf[2] == cc.GameConfig.OBJ_TYPE.BOSS){
-			cc.BossNum ++;
+			this.checkBoss();
 		}
 	},
-	
-	checkStar(){
-		if(this.Type != 'STAR'){
+
+	checkBoss() {
+		if (this.prefabConf[2] == cc.GameConfig.OBJ_TYPE.BOSS) {
+			cc.BossNum++;
+		}
+	},
+
+	checkStar() {
+		if (this.Type != 'STAR') {
 			return;
 		}
-		
+
 		this.isReviewStar = cc.whole.checkStarId(this.Id);
 	},
 
-    update (dt) {
-        if(this.IsCheckRect){
-            if (cc.MathUtil.rectInRect(this.node,cc.CameraMgr.getDrawRect())) {
-                this.runFun();
-            }else {
-				if(!this.IsOnce){
-					if(this.count < this.MaxNum){
+	update(dt) {
+		if (this.IsCheckRect) {
+			if (cc.MathUtil.rectInRect(this.node, cc.CameraMgr.getDrawRect())) {
+				this.runFun();
+			} else {
+				if (!this.IsOnce) {
+					if (this.count < this.MaxNum) {
 						this.isInit = false;
 					}
-				}	
-            }
-        }else{
-            this.runFun(); 
-        }
-    },
-	
-	add(){
+				}
+			}
+		} else {
+			this.runFun();
+		}
+	},
+
+	add() {
 		this.count++;
-		if(this.IsBlast){
-			cc.GameUI.addObj(cc.GameConfig.PREFAB_TYPE.POINTBLAST,this.node,cc.GameConfig.POS_TYPE.LEFT_DOWN,(item) =>{
+		if (this.IsBlast) {
+			cc.GameUI.addObj(cc.GameConfig.PREFAB_TYPE.POINTBLAST, this.node, cc.GameConfig.POS_TYPE.LEFT_DOWN, (item) => {
 				this.scheduleOnce(() => {
-		            this.addObj();
-		        },0.2);
+					this.addObj();
+				}, 0.2);
 			});
-		}else{
+		} else {
 			this.addObj();
 		}
 	},
-	
-	addObj(){
-		if(this.prefabConf){
-		    cc.GameUI.addObj(this.prefabConf,this.node,cc.GameConfig.POS_TYPE.LEFT_DOWN,(item) =>{
+
+	addObj() {
+		if (this.prefabConf) {
+			cc.GameUI.addObj(this.prefabConf, this.node, cc.GameConfig.POS_TYPE.LEFT_DOWN, (item) => {
 				let script = item.getComponent(this.prefabConf[1]);
 				script.pUid = this.node.uuid;
-				if(script.setConfig){
-					 script.setConfig(this.config);
-				}else{
-					cc.log(this.Type,this.prefabConf)
+				if (script.setConfig) {
+					script.setConfig(this.config);
+				} else {
+					cc.log(this.Type, this.prefabConf)
 				}
-			   
+
 			});
-		}else{
-			cc.log(this.Type,this.prefabConf);
+		} else {
+			cc.log(this.Type, this.prefabConf);
 		}
 	},
-	
-	runFun(){
-		if (!this.isInit ) {
-            this.add();
-            this.isInit = true;
-        }
-       
-        if (this.IsInfinite) {
-            this.index++;
-            if (this.index >= this.Time) {
-                this.add();
-                this.index = 0;
-            }
-        }else{
+
+	runFun() {
+		if (!this.isInit) {
+			this.add();
+			this.isInit = true;
+		}
+
+		if (this.IsInfinite) {
+			this.index++;
+			if (this.index >= this.Time) {
+				this.add();
+				this.index = 0;
+			}
+		} else {
 			if (this.count < this.MaxNum) {
 				this.index++;
-				if(this.index >= this.Time){ 
-				    this.add();
-                    this.index = 0;
+				if (this.index >= this.Time) {
+					this.add();
+					this.index = 0;
 				}
-               
-            }
-		}			
-                
+
+			}
+		}
+
 	},
 
-    reduce(num){
-        if(this.IsOnce || this.IsInfinite){
-           return;
-        }
-		
+	reduce(num) {
+		if (this.IsOnce || this.IsInfinite) {
+			return;
+		}
+
 		this.count -= num;
-        if(this.count <= 0){
-            this.count = 0;
-        }
-    },
+		if (this.count <= 0) {
+			this.count = 0;
+		}
+	},
 });

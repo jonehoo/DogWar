@@ -8,11 +8,8 @@ if (!wxApi || !shared) {
 } else {
   const ctx = shared.getContext("2d");
   const RANK_KEY = "rank";
-  const MAX_ROWS = 10;
-  const ROW_H = 56;
-  const START_Y = 138;
-  const LEFT_X = 56;
-  const RIGHT_X_OFFSET = 56;
+  const MAX_ROWS = 50;
+  const ROW_H = 64;
 
   let state = {
     visible: false,
@@ -21,12 +18,22 @@ if (!wxApi || !shared) {
     selfOpenId: "",
   };
 
+  let touchStartY = 0;
+  let currentScrollY = 0;
+  let isDragging = false;
+  let baseScrollY = 0;
+
+  const avatarCache = {};
+
   function safeNum(v, d = 0) {
     const n = Number(v);
     return Number.isFinite(n) ? n : d;
   }
 
   function clear() {
+    try {
+      ctx.restore();
+    } catch (e) {}
     ctx.clearRect(0, 0, shared.width, shared.height);
   }
 
@@ -54,10 +61,30 @@ if (!wxApi || !shared) {
   }
 
   function buildValueText(rank) {
-    return "第" + (rank.chapter + 1) + "关  分 " + rank.score + "  " + rank.time + "s";
+    return "第" + (rank.chapter + 1) + "关  " + rank.score + "分  " + rank.time + "s";
   }
 
-  function drawRoundRect(x, y, w, h, r, color) {
+  function drawComicRect(x, y, w, h, r, fillColor, strokeColor, strokeWidth, shadowOffset) {
+    // 1. Draw solid black shadow first
+    if (shadowOffset > 0) {
+      ctx.beginPath();
+      const sx = x + shadowOffset;
+      const sy = y + shadowOffset;
+      ctx.moveTo(sx + r, sy);
+      ctx.lineTo(sx + w - r, sy);
+      ctx.quadraticCurveTo(sx + w, sy, sx + w, sy + r);
+      ctx.lineTo(sx + w, sy + h - r);
+      ctx.quadraticCurveTo(sx + w, sy + h, sx + w - r, sy + h);
+      ctx.lineTo(sx + r, sy + h);
+      ctx.quadraticCurveTo(sx, sy + h, sx, sy + h - r);
+      ctx.lineTo(sx, sy + r);
+      ctx.quadraticCurveTo(sx, sy, sx + r, sy);
+      ctx.closePath();
+      ctx.fillStyle = "#000000";
+      ctx.fill();
+    }
+
+    // 2. Draw card main body
     ctx.beginPath();
     ctx.moveTo(x + r, y);
     ctx.lineTo(x + w - r, y);
@@ -69,15 +96,67 @@ if (!wxApi || !shared) {
     ctx.lineTo(x, y + r);
     ctx.quadraticCurveTo(x, y, x + r, y);
     ctx.closePath();
-    ctx.fillStyle = color;
-    ctx.fill();
+    
+    if (fillColor) {
+      ctx.fillStyle = fillColor;
+      ctx.fill();
+    }
+    
+    if (strokeColor && strokeWidth > 0) {
+      ctx.lineWidth = strokeWidth;
+      ctx.strokeStyle = strokeColor;
+      ctx.stroke();
+    }
+  }
+
+  function drawAvatar(avatarUrl, x, y, size) {
+    if (!avatarUrl) {
+      drawDefaultAvatar(x, y, size);
+      return;
+    }
+    const img = avatarCache[avatarUrl];
+    if (img) {
+      if (img.loaded) {
+        ctx.drawImage(img, x, y, size, size);
+      } else {
+        drawDefaultAvatar(x, y, size);
+      }
+    } else {
+      const newImg = wxApi.createImage();
+      newImg.onload = () => {
+        newImg.loaded = true;
+        if (state.visible) {
+          drawPanel();
+        }
+      };
+      newImg.onerror = () => {
+        newImg.failed = true;
+      };
+      newImg.src = avatarUrl;
+      avatarCache[avatarUrl] = newImg;
+      drawDefaultAvatar(x, y, size);
+    }
+  }
+
+  function drawDefaultAvatar(x, y, size) {
+    ctx.fillStyle = "#A2B6DF";
+    ctx.fillRect(x, y, size, size);
+  }
+
+  function drawCircleAvatar(avatarUrl, x, y, radius) {
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(x + radius, y + radius, radius, 0, Math.PI * 2);
+    ctx.clip();
+    drawAvatar(avatarUrl, x, y, radius * 2);
+    ctx.restore();
   }
 
   function rankColor(i) {
-    if (i === 0) return "#F6C651";
-    if (i === 1) return "#D1DBF5";
-    if (i === 2) return "#D8A988";
-    return "#78A6FF";
+    if (i === 0) return "#FFD54F"; // Gold
+    if (i === 1) return "#CFD8DC"; // Silver
+    if (i === 2) return "#FFE0B2"; // Bronze
+    return "#FFFFFF"; // Others
   }
 
   function shortName(name) {
@@ -92,70 +171,167 @@ if (!wxApi || !shared) {
     return b.rank.updateAt - a.rank.updateAt;
   }
 
+  function drawNail(cx, cy) {
+    ctx.beginPath();
+    ctx.arc(cx, cy, 6, 0, Math.PI * 2);
+    ctx.fillStyle = "#455A64"; // Metal grey
+    ctx.fill();
+    ctx.strokeStyle = "#000000";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    // Highlight
+    ctx.beginPath();
+    ctx.arc(cx - 2, cy - 2, 1.5, 0, Math.PI * 2);
+    ctx.fillStyle = "#FFFFFF";
+    ctx.fill();
+  }
+
   function drawPanel() {
     clear();
     if (!state.visible) return;
 
-    const bg = ctx.createLinearGradient(0, 0, 0, shared.height);
-    bg.addColorStop(0, "#0F1425");
-    bg.addColorStop(1, "#1C2948");
-    ctx.fillStyle = bg;
-    ctx.fillRect(0, 0, shared.width, shared.height);
+    // Outer wood board size
+    const boardX = 16;
+    const boardY = 16;
+    const boardW = shared.width - 32;
+    const boardH = shared.height - 32;
 
-    drawRoundRect(20, 20, shared.width - 40, shared.height - 40, 24, "rgba(8, 12, 24, 0.72)");
-    drawRoundRect(28, 28, shared.width - 56, 88, 18, "rgba(67, 134, 255, 0.22)");
+    // 1. Draw wood shadow
+    drawComicRect(boardX + 6, boardY + 6, boardW, boardH, 20, "#3E221A", null, 0, 0);
+    // 2. Draw main wood board
+    drawComicRect(boardX, boardY, boardW, boardH, 20, "#794635", "#000000", 4, 0);
+
+    // 3. Draw horizontal plank lines
+    ctx.strokeStyle = "#532D20";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(boardX + 4, boardY + boardH * 0.25);
+    ctx.lineTo(boardX + boardW - 4, boardY + boardH * 0.25);
+    ctx.moveTo(boardX + 4, boardY + boardH * 0.5);
+    ctx.lineTo(boardX + boardW - 4, boardY + boardH * 0.5);
+    ctx.moveTo(boardX + 4, boardY + boardH * 0.75);
+    ctx.lineTo(boardX + boardW - 4, boardY + boardH * 0.75);
+    ctx.stroke();
+
+    // 4. Draw nails on the wood board
+    drawNail(boardX + 16, boardY + 16);
+    drawNail(boardX + boardW - 16, boardY + 16);
+    drawNail(boardX + 16, boardY + boardH - 16);
+    drawNail(boardX + boardW - 16, boardY + boardH - 16);
+
+    // 5. Draw parchment paper scroll
+    const paperX = boardX + 24;
+    const paperY = boardY + 24;
+    const paperW = boardW - 48;
+    const paperH = boardH - 48;
+
+    // Draw paper shadow
+    drawComicRect(paperX + 4, paperY + 4, paperW, paperH, 12, "#3E221A", null, 0, 0);
+    // Draw paper main body
+    drawComicRect(paperX, paperY, paperW, paperH, 12, "#F7F2E2", "#000000", 3, 0);
+
+    // 6. Draw green wooden header
+    const headerX = paperX + 16;
+    const headerY = paperY + 16;
+    const headerW = paperW - 32;
+    const headerH = 64;
+    drawComicRect(headerX, headerY, headerW, headerH, 8, "#26A69A", "#000000", 2.5, 3);
 
     ctx.textAlign = "center";
     ctx.fillStyle = "#FFFFFF";
-    ctx.font = "bold 40px sans-serif";
-    ctx.fillText("好友排行榜", shared.width / 2, 76);
+    ctx.font = "bold 24px sans-serif";
+    ctx.fillText("好友排行榜", shared.width / 2, headerY + 26);
 
-    ctx.fillStyle = "#C0D2FF";
-    ctx.font = "22px sans-serif";
-    ctx.fillText("排序: 关卡 > 分数 > 用时", shared.width / 2, 106);
+    ctx.fillStyle = "#B2DFDB";
+    ctx.font = "bold 13px sans-serif";
+    ctx.fillText("排序: 关卡 > 分数 > 用时", shared.width / 2, headerY + 50);
 
-    ctx.textAlign = "left";
-    state.rows.forEach((item, idx) => {
-      const y = START_Y + idx * ROW_H;
-      const isSelf = item.openid && item.openid === state.selfOpenId;
-      const cardX = 34;
-      const cardY = y - 36;
-      const cardW = shared.width - 68;
-      const cardH = 44;
-
-      drawRoundRect(cardX, cardY, cardW, cardH, 10, "rgba(120, 147, 205, 0.16)");
-
-      if (isSelf) {
-        drawRoundRect(cardX, cardY, cardW, cardH, 10, "rgba(60, 182, 255, 0.30)");
-      }
-
-      ctx.beginPath();
-      ctx.arc(LEFT_X + 8, y - 10, 12, 0, Math.PI * 2);
-      ctx.fillStyle = rankColor(idx);
-      ctx.fill();
-
-      ctx.fillStyle = "#0E1424";
-      ctx.font = "bold 16px sans-serif";
-      ctx.textAlign = "center";
-      ctx.fillText(String(idx + 1), LEFT_X + 8, y - 4);
-      ctx.textAlign = "left";
-
-      ctx.fillStyle = "#EAF1FF";
-      ctx.font = "24px sans-serif";
-      ctx.fillText(shortName(item.nickname), LEFT_X + 30, y);
-
-      ctx.fillStyle = "#FFFFFF";
-      ctx.textAlign = "right";
-      ctx.fillText(buildValueText(item.rank), shared.width - RIGHT_X_OFFSET, y);
-      ctx.textAlign = "left";
-    });
+    const START_Y = headerY + headerH + 36;
+    const clipTop = headerY + headerH + 12;
+    const clipBottom = paperY + paperH - 12;
 
     if (state.rows.length === 0) {
-      ctx.fillStyle = "#DCE8FF";
-      ctx.font = "28px sans-serif";
+      drawComicRect(shared.width / 2 - 160, shared.height / 2 - 30, 320, 60, 10, "#FFFDF7", "#D7CCC8", 2, 0);
+      ctx.fillStyle = "#4E342E";
+      ctx.font = "bold 16px sans-serif";
       ctx.textAlign = "center";
-      ctx.fillText("暂无排行数据，去闯关冲榜吧!", shared.width / 2, shared.height / 2);
+      ctx.fillText("暂无排行数据，去闯关冲榜吧!", shared.width / 2, shared.height / 2 + 5);
       ctx.textAlign = "left";
+    } else {
+      // Draw scrollable rows with clipping mask
+      ctx.save();
+      ctx.beginPath();
+      ctx.rect(paperX + 4, clipTop, paperW - 8, clipBottom - clipTop);
+      ctx.clip();
+
+      try {
+        ctx.textAlign = "left";
+        state.rows.forEach((item, idx) => {
+          const y = START_Y + idx * ROW_H + currentScrollY;
+          const isSelf = item.openid && item.openid === state.selfOpenId;
+
+          const cardX = paperX + 12;
+          const cardH = 46;
+          const cardY = y - cardH / 2;
+          const cardW = paperW - 24;
+
+          // Draw Row Highlight for Self
+          if (isSelf) {
+            drawComicRect(cardX, cardY - 2, cardW, cardH + 4, 6, "rgba(255, 179, 0, 0.15)", "#D7CCC8", 1.5, 0);
+          }
+
+          // Draw Rank Badge
+          const badgeX = cardX + 20;
+          const badgeR = 13;
+          drawComicRect(badgeX - badgeR, y - badgeR, badgeR * 2, badgeR * 2, badgeR, rankColor(idx), "#4E342E", 1.8, 0);
+
+          ctx.fillStyle = "#4E342E";
+          ctx.font = "bold 15px sans-serif";
+          ctx.textAlign = "center";
+          ctx.fillText(String(idx + 1), badgeX, y + 5);
+          ctx.textAlign = "left";
+
+          // Draw Avatar
+          const avatarX = cardX + 42;
+          const avatarR = 16;
+          drawCircleAvatar(item.avatarUrl, avatarX, y - avatarR, avatarR);
+          drawComicRect(avatarX, y - avatarR, avatarR * 2, avatarR * 2, avatarR, null, "#4E342E", 1.8, 0);
+
+          // Draw Nickname (dark brown text)
+          ctx.fillStyle = "#4E342E";
+          ctx.font = "bold 17px sans-serif";
+          ctx.fillText(shortName(item.nickname), cardX + 84, y + 6);
+
+          // Draw Stats Capsule
+          const capsuleW = 180;
+          const capsuleH = 26;
+          const capsuleX = cardX + cardW - capsuleW - 8;
+          const capsuleY = y - capsuleH / 2;
+
+          drawComicRect(capsuleX, capsuleY, capsuleW, capsuleH, 6, "#FFFDF7", "#D7CCC8", 1.5, 0);
+
+          ctx.fillStyle = "#8D6E63";
+          ctx.font = "bold 13px sans-serif";
+          ctx.textAlign = "center";
+          ctx.fillText(buildValueText(item.rank), capsuleX + capsuleW / 2, y + 4);
+          ctx.textAlign = "left";
+
+          // Draw dashed separator line
+          if (idx < state.rows.length - 1) {
+            ctx.save();
+            ctx.setLineDash([4, 4]);
+            ctx.strokeStyle = "#D7CCC8";
+            ctx.lineWidth = 1.5;
+            ctx.beginPath();
+            ctx.moveTo(cardX, y + ROW_H / 2);
+            ctx.lineTo(cardX + cardW, y + ROW_H / 2);
+            ctx.stroke();
+            ctx.restore();
+          }
+        });
+      } finally {
+        ctx.restore();
+      }
     }
   }
 
@@ -173,6 +349,7 @@ if (!wxApi || !shared) {
             return {
               openid: item.openid || "",
               nickname: item.nickname || "",
+              avatarUrl: item.avatarUrl || "",
               rank,
             };
           })
@@ -192,12 +369,14 @@ if (!wxApi || !shared) {
   function showRank() {
     console.log("[Rank-Sub] showRank");
     state.visible = true;
+    currentScrollY = 0;
     drawPanel();
     reloadRankList();
   }
 
   function hideRank() {
     state.visible = false;
+    currentScrollY = 0;
     clear();
   }
 
@@ -232,4 +411,46 @@ if (!wxApi || !shared) {
       hideRank();
     }
   });
+
+  wxApi.onTouchStart((e) => {
+    if (!state.visible || !e.touches || e.touches.length === 0) return;
+    touchStartY = e.touches[0].clientY;
+    baseScrollY = currentScrollY;
+    isDragging = true;
+  });
+
+  wxApi.onTouchMove((e) => {
+    if (!state.visible || !isDragging || !e.touches || e.touches.length === 0) return;
+    const dy = e.touches[0].clientY - touchStartY;
+    let targetScrollY = baseScrollY + dy;
+
+    const boardY = 16;
+    const boardH = shared.height - 32;
+    const paperY = boardY + 24;
+    const paperH = boardH - 48;
+    const headerH = 64;
+    const clipTop = paperY + 16 + headerH + 12;
+    const clipBottom = paperY + paperH - 12;
+    const visibleH = clipBottom - clipTop;
+
+    const contentH = state.rows.length * ROW_H;
+    const maxScroll = Math.max(0, contentH - visibleH);
+
+    if (targetScrollY > 0) targetScrollY = 0;
+    if (targetScrollY < -maxScroll) targetScrollY = -maxScroll;
+
+    currentScrollY = targetScrollY;
+    drawPanel();
+  });
+
+  wxApi.onTouchEnd(() => {
+    isDragging = false;
+  });
+
+  if (typeof wxApi.onTouchCancel === "function") {
+    wxApi.onTouchCancel(() => {
+      isDragging = false;
+    });
+  }
 }
+

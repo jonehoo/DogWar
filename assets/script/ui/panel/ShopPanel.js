@@ -1,70 +1,67 @@
-//电子邮件puhalskijsemen@gmail.com 
-//源码网站 开vpn全局模式打开 http://web3incubators.com/ 
- //电报https://t.me/gamecode999 
- //网页客服 http://web3incubators.com/kefu.html  
+//  Su.GuiCuan
 
 cc.Class({
-    extends: cc.Component,
+	extends: cc.Component,
 
-    properties: {
+	properties: {
 		content: cc.Node,
 		itemArea: cc.Node,
-    },
-	
-	start(){
-		setTimeout(() => {
-			cc.WxAdMgr.ShowInterstitialAd();
-		},2000);
 	},
 
-    onShow () {
+	start() {
+		setTimeout(() => {
+			cc.WxAdMgr.ShowInterstitialAd();
+		}, 2000);
+	},
+
+	onShow() {
 		cc.WxAdMgr.ShowBannerAd();
 		cc.Shop = this;
-        this.init();
+		this.init();
 		cc.GameEvent.send("打开商店窗口");
-    },
-	
-	onClick(event,tag){
+	},
+
+	onClick(event, tag) {
 		cc.AudioMgr.playSound('button');
-		switch(tag){
+		switch (tag) {
 			case 'close':
-			    this.dead();
-			    break;
-				
+				this.dead();
+				break;
+
 			default:
-			    break;
+				break;
 		}
 	},
-	
-	init(){
+
+	init() {
 		this.animCtrl = this.content.getComponent(cc.Animation);
 		this.items = this.itemArea.children;
 		this.keys = Object.keys(cc.ObjConfig.SHOP);
 		this.initItem();
-    },
-	
-	initItem(){
+	},
+
+	initItem() {
 		this.scripts = [];
 		//for(let i = 0; i < 4; i ++){
-		for(let i = 0; i < this.items.length; i ++){
+		for (let i = 0; i < this.items.length; i++) {
 			let script = this.items[i].getComponent('ShopItem');
 			script.setKey(this.keys[i]);
 			this.scripts.push(script);
 		}
 	},
-	
-	checkPrice(){
-		for(let key in this.scripts){
+
+	checkPrice() {
+		for (let key in this.scripts) {
 			this.scripts[key].checkPrice();
 		}
 	},
-	
-	dead(){
+
+	dead() {
 		cc.WxAdMgr.HideBannerAd();
 		this.animCtrl.play('panelClose');
-        this.scheduleOnce(() => {
+		this.scheduleOnce(() => {
 			cc.Shop = null;
-            this.node.destroy();
-        },0.18);
+			this.node.destroy();
+		}, 0.18);
 	},
 });

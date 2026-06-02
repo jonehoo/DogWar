@@ -1,17 +1,14 @@
-//电子邮件puhalskijsemen@gmail.com 
-//源码网站 开vpn全局模式打开 http://web3incubators.com/ 
- //电报https://t.me/gamecode999 
- //网页客服 http://web3incubators.com/kefu.html  
+//  Su.GuiCuan
 
 
 cc.Class({
-    extends: cc.Component,
+  extends: cc.Component,
 
-    properties: {
-        bg: cc.Node,
-    },
+  properties: {
+    bg: cc.Node,
+  },
 
-    setConfig(conf){
-		this.bg.angle = conf.Num;
-    },
+  setConfig(conf) {
+    this.bg.angle = conf.Num;
+  },
 });
