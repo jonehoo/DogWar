@@ -11233,8 +11233,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        640,
-        410,
+        721,
+        411,
         0,
         0,
         0,
@@ -11327,7 +11327,7 @@
       "__id__": 239
     },
     "_children": [],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 244
@@ -11347,8 +11347,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 200,
-      "height": 125
+      "width": 700,
+      "height": 350
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -11359,8 +11359,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        640,
-        410,
+        641.685,
+        345.977,
         0,
         0,
         0,
@@ -11400,10 +11400,10 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "7abe5961-9ea5-4cec-8958-2d5bf157b4e0"
+      "__uuid__": "1ac9740f-e4b5-4d3e-a9bb-9b5aaa0e74ee"
     },
     "_type": 0,
-    "_sizeMode": 1,
+    "_sizeMode": 0,
     "_fillType": 0,
     "_fillCenter": {
       "__type__": "cc.Vec2",
@@ -11414,7 +11414,7 @@
     "_fillRange": 0,
     "_isTrimmedMode": true,
     "_atlas": {
-      "__uuid__": "7a33e234-330c-4a3b-9a54-1a5af92ba39a"
+      "__uuid__": "9ff38e20-c38b-4575-bca8-f01e92e16a1d"
     },
     "_id": "f3zUI3XYVNnKfrMR5kibBt"
   },
@@ -11433,8 +11433,8 @@
     "_right": 0,
     "_top": 0,
     "_bottom": 0,
-    "_verticalCenter": 50,
-    "_horizontalCenter": 0,
+    "_verticalCenter": -14.023000000000025,
+    "_horizontalCenter": 1.6849999999999454,
     "_isAbsLeft": true,
     "_isAbsRight": true,
     "_isAbsTop": true,
@@ -11498,9 +11498,9 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "7f052adc-0339-4c12-860f-c89e6463f4d7"
+      "__uuid__": "7605a7df-dd17-4335-851b-4e9d0678625c"
     },
-    "_type": 2,
+    "_type": 1,
     "_sizeMode": 0,
     "_fillType": 0,
     "_fillCenter": {
@@ -11511,7 +11511,9 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
-    "_atlas": null,
+    "_atlas": {
+      "__uuid__": "9ff38e20-c38b-4575-bca8-f01e92e16a1d"
+    },
     "_id": "efvKIURa1LALPd8mH3Dkqp"
   },
   {

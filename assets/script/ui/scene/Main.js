@@ -155,7 +155,7 @@ cc.Class({
 		}
 		
 		let param = {
-		   title: '松鼠大作战2020',
+		   title: '狗狗大作战2026',
 		   imageUrl: cc.whole.sharePicPath,
 		   query: 'a=b'
 		}

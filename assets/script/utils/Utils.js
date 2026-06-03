@@ -155,7 +155,7 @@ module.exports =
                     cc.ShareStartTime = Date.now();
                     cc.ShareTimes = 1;
                     cc.MyPlat.aldShareAppMessage({
-                        title: '松鼠大作战2020',
+                        title: '狗狗大作战2026',
                         imageUrl: cc.whole.sharePicPath,
                     });
                 } else {
@@ -169,7 +169,7 @@ module.exports =
                 if (cc.MyPlat.shareAppMessage) {
                     //cc.ShareStartTime = null;
                     cc.MyPlat.aldShareAppMessage({
-                        title: '松鼠大作战2020',
+                        title: '狗狗大作战2026',
                         imageUrl: cc.whole.sharePicPath,
                     });
                 } else {
@@ -184,7 +184,7 @@ module.exports =
                     cc.ShareStartTime = Date.now();
                     cc.ShareTimes++;
                     cc.MyPlat.aldShareAppMessage({
-                        title: '松鼠大作战2020',
+                        title: '狗狗大作战2026',
                         imageUrl: cc.whole.sharePicPath,
                     });
                 } else {
