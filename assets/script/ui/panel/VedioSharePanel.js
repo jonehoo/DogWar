@@ -31,7 +31,7 @@ cc.Class({
 
 	ttShare() {
 		let self = this;
-		if (cc.MyPlat) {
+		if (cc.MyPlat && typeof cc.MyPlat.shareVideo === 'function') {
 			cc.MyPlat.shareVideo({
 				videoPath: `${cc.whole.videoPath}`,
 				success() {
@@ -46,6 +46,26 @@ cc.Class({
 
 				},
 				fail(e) {
+					setTimeout(() => {
+						cc.MyPlat.showToast({
+							title: '分享失败!',
+							icon: 'none'
+						});
+					}, 500);
+				}
+			});
+		} else if (cc.MyPlat) {
+			cc.Utils.share((res) => {
+				if (res === 1) {
+					setTimeout(() => {
+						cc.MyPlat.showToast({
+							title: '分享成功,恭喜获得',
+							icon: 'none'
+						});
+
+						self.reward();
+					}, 500);
+				} else {
 					setTimeout(() => {
 						cc.MyPlat.showToast({
 							title: '分享失败!',

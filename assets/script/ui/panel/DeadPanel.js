@@ -111,28 +111,61 @@ cc.Class({
 	vedioShare() {
 		let self = this;
 		self.isTime = false;
-		cc.MyPlat.shareVideo({
-			videoPath: `${cc.whole.videoPath}`,
-			success() {
-				cc.MoreBlood = true;
-				self.resetParam();
-				setTimeout(() => {
-					cc.MyPlat.showToast({
-						title: '分享成功',
-						icon: 'none'
-					});
-				}, 500);
-			},
-			fail(e) {
-				self.isTime = true;
-				setTimeout(() => {
-					cc.MyPlat.showToast({
-						title: '分享失败!',
-						icon: 'none'
-					});
-				}, 500);
-			}
-		});
+		console.log("DeadPanel: vedioShare called, cc.MyPlat exists:", !!cc.MyPlat);
+		if (cc.MyPlat && typeof cc.MyPlat.shareVideo === 'function') {
+			console.log("DeadPanel: calling cc.MyPlat.shareVideo");
+			cc.MyPlat.shareVideo({
+				videoPath: `${cc.whole.videoPath}`,
+				success() {
+					console.log("DeadPanel: shareVideo success");
+					cc.MoreBlood = true;
+					self.resetParam();
+					setTimeout(() => {
+						cc.MyPlat.showToast({
+							title: '分享成功',
+							icon: 'none'
+						});
+					}, 500);
+				},
+				fail(e) {
+					console.log("DeadPanel: shareVideo fail", e);
+					self.isTime = true;
+					setTimeout(() => {
+						cc.MyPlat.showToast({
+							title: '分享失败!',
+							icon: 'none'
+						});
+					}, 500);
+				}
+			});
+		} else if (cc.MyPlat) {
+			console.log("DeadPanel: calling cc.Utils.share");
+			cc.Utils.share((res) => {
+				console.log("DeadPanel: cc.Utils.share callback executed with res:", res);
+				if (res === 1) {
+					cc.MoreBlood = true;
+					self.resetParam();
+					setTimeout(() => {
+						cc.MyPlat.showToast({
+							title: '分享成功',
+							icon: 'none'
+						});
+					}, 500);
+				} else {
+					self.isTime = true;
+					setTimeout(() => {
+						cc.MyPlat.showToast({
+							title: '分享失败!',
+							icon: 'none'
+						});
+					}, 500);
+				}
+			});
+		} else {
+			console.log("DeadPanel: cc.MyPlat not exist, direct resetParam");
+			cc.MoreBlood = true;
+			self.resetParam();
+		}
 	},
 
 	play() {
@@ -151,6 +184,7 @@ cc.Class({
 	},
 
 	resetParam() {
+		console.log("DeadPanel: resetParam executed, cc.ContinueTimes:", cc.ContinueTimes, "cc.isPause:", cc.isPause);
 		cc.WxAdMgr.HideBannerAd();
 		if (cc.ContinueTimes > 0) {
 			cc.ContinueTimes--;

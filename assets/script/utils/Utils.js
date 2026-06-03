@@ -5,8 +5,8 @@
 module.exports =
     (function Utils() {
         function init() {
-            //this.onShow();
-            this.initGuide();
+            onShow();
+            initGuide();
         };
 
         function initGuide() {
@@ -102,34 +102,17 @@ module.exports =
         function onShow() {
             if (cc.MyPlat) {
                 if (cc.MyPlat.onShow) {
+                    console.log("Utils: registering cc.MyPlat.onShow listener");
                     cc.MyPlat.onShow((res) => {
+                        console.log("Utils: cc.MyPlat.onShow event triggered, cc.ShareStartTime exists:", !!cc.ShareStartTime, "cc.ShareCb exists:", !!cc.ShareCb);
                         if (cc.ShareStartTime) {
-                            if (cc.ShareTimes > 3) {
-                                cc.ShareCb && cc.ShareCb(1);
-                                cc.ShareCb = null;
-                                return;
-                            }
-
-                            let t = (Date.now() - cc.ShareStartTime) / 1000;
-
-                            let weights = null;
-                            if (t < 2) {
-                                weights = cc.GameConfig.SHARE_PROBABILITY[cc.ShareTimes].p1;
-                            } else if (t >= 2 && t < 3.5) {
-                                weights = cc.GameConfig.SHARE_PROBABILITY[cc.ShareTimes].p2;
-                            } else if (t >= 3.5 && t < 5) {
-                                weights = cc.GameConfig.SHARE_PROBABILITY[cc.ShareTimes].p3;
-                            } else if (t >= 5) {
-                                weights = cc.GameConfig.SHARE_PROBABILITY[cc.ShareTimes].p4;
-                            }
-
-                            let r = this.generateResult(weights);
-                            cc.ShareCb && cc.ShareCb(r);
+                            cc.ShareCb && cc.ShareCb(1);
                             cc.ShareCb = null;
+                            cc.ShareStartTime = null;
                         }
                     });
                 } else {
-                    this.showToast('请更新您的微信版本');
+                    showToast('请更新您的微信版本');
                 }
             }
         };
@@ -148,16 +131,40 @@ module.exports =
         };
 
         function share(cb) {
+            console.log("Utils: share(cb) called, cc.MyPlat exists:", !!cc.MyPlat);
             if (cc.MyPlat) {
                 if (cc.MyPlat.shareAppMessage) {
                     cc.ShareCb = null;
                     cc.ShareCb = cb;
                     cc.ShareStartTime = Date.now();
                     cc.ShareTimes = 1;
-                    cc.MyPlat.aldShareAppMessage({
+                    let shareOptions = {
                         title: '狗狗大作战2026',
                         imageUrl: cc.whole.sharePicPath,
-                    });
+                    };
+                    console.log("Utils: shareOptions:", shareOptions);
+                    try {
+                        if (typeof cc.MyPlat.aldShareAppMessage === 'function') {
+                            console.log("Utils: calling aldShareAppMessage");
+                            cc.MyPlat.aldShareAppMessage(shareOptions);
+                        } else {
+                            console.log("Utils: calling standard shareAppMessage");
+                            cc.MyPlat.shareAppMessage(shareOptions);
+                        }
+                    } catch (e) {
+                        console.error("Utils: error calling share API:", e);
+                    }
+
+                    // 兼容微信开发者工具模拟器（无切后台/不触发 onShow）以及真机双重保险
+                    console.log("Utils: setting setTimeout callback fallback for 800ms");
+                    setTimeout(() => {
+                        console.log("Utils: setTimeout fallback triggered, cc.ShareCb exists:", !!cc.ShareCb);
+                        if (cc.ShareCb) {
+                            cc.ShareCb(1);
+                            cc.ShareCb = null;
+                            cc.ShareStartTime = null;
+                        }
+                    }, 800);
                 } else {
                     this.showToast('请更新您的微信版本');
                 }
@@ -167,11 +174,15 @@ module.exports =
         function normalShare() {
             if (cc.MyPlat) {
                 if (cc.MyPlat.shareAppMessage) {
-                    //cc.ShareStartTime = null;
-                    cc.MyPlat.aldShareAppMessage({
+                    let shareOptions = {
                         title: '狗狗大作战2026',
                         imageUrl: cc.whole.sharePicPath,
-                    });
+                    };
+                    if (typeof cc.MyPlat.aldShareAppMessage === 'function') {
+                        cc.MyPlat.aldShareAppMessage(shareOptions);
+                    } else {
+                        cc.MyPlat.shareAppMessage(shareOptions);
+                    }
                 } else {
                     this.showToast('请更新您的微信版本');
                 }
@@ -183,10 +194,15 @@ module.exports =
                 if (cc.MyPlat.shareAppMessage) {
                     cc.ShareStartTime = Date.now();
                     cc.ShareTimes++;
-                    cc.MyPlat.aldShareAppMessage({
+                    let shareOptions = {
                         title: '狗狗大作战2026',
                         imageUrl: cc.whole.sharePicPath,
-                    });
+                    };
+                    if (typeof cc.MyPlat.aldShareAppMessage === 'function') {
+                        cc.MyPlat.aldShareAppMessage(shareOptions);
+                    } else {
+                        cc.MyPlat.shareAppMessage(shareOptions);
+                    }
                 } else {
                     this.showToast('请更新您的微信版本');
                 }
