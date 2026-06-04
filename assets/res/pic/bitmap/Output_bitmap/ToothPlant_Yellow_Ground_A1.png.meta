@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "7e77e3ee-12a4-44c9-9be9-9d4c4a53ef2d",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 48,
+  "height": 60,
+  "platformSettings": {},
+  "subMetas": {
+    "ToothPlant_Yellow_Ground_A1": {
+      "ver": "1.0.6",
+      "uuid": "9ae45801-7f72-4323-9003-a350f2a6e2c5",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "7e77e3ee-12a4-44c9-9be9-9d4c4a53ef2d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 48,
+      "height": 60,
+      "rawWidth": 48,
+      "rawHeight": 60,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

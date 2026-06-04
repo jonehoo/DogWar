@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "6fe0292a-e39c-469d-ad73-fe79679de78c",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 75,
+  "height": 90,
+  "platformSettings": {},
+  "subMetas": {
+    "PlantAttack-(44x42)_07": {
+      "ver": "1.0.6",
+      "uuid": "dbac30b5-213a-4f99-9d23-954b5b511add",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "6fe0292a-e39c-469d-ad73-fe79679de78c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": -9.5,
+      "trimX": 1,
+      "trimY": 19,
+      "width": 73,
+      "height": 71,
+      "rawWidth": 75,
+      "rawHeight": 90,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

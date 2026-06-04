@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "c32fb555-0cf2-41c1-bc5e-ee77c83b17cf",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 36,
+  "height": 30,
+  "platformSettings": {},
+  "subMetas": {
+    "Big-Diamond-Idle-(18x14)_10": {
+      "ver": "1.0.6",
+      "uuid": "5b88092d-e5f1-42be-9358-e00845796063",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "c32fb555-0cf2-41c1-bc5e-ee77c83b17cf",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 36,
+      "height": 30,
+      "rawWidth": 36,
+      "rawHeight": 30,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "bb3f287a-e506-4cbb-8b6c-b9eae16c8afb",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 111,
+  "height": 69,
+  "platformSettings": {},
+  "subMetas": {
+    "__Wolf_Run_004": {
+      "ver": "1.0.6",
+      "uuid": "0370ae88-b8a2-4bb3-b507-ee79dc467c1a",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "bb3f287a-e506-4cbb-8b6c-b9eae16c8afb",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 111,
+      "height": 69,
+      "rawWidth": 111,
+      "rawHeight": 69,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
