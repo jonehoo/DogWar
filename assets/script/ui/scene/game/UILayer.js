@@ -59,6 +59,13 @@ cc.Class({
 		this.initValue();
 		this.showPassInfo();
 		this.checkGuide();
+
+		if (this.upArea) this.upArea.active = false;
+		if (this.downArea) this.downArea.active = false;
+		if (this.leftArea) this.leftArea.active = false;
+		if (this.rightArea) this.rightArea.active = false;
+
+		this.initJoystick();
 	},
 
 	checkGuide() {
@@ -387,52 +394,70 @@ cc.Class({
 	},
 
 	addLisener() {
-		this.control.on(cc.Node.EventType.TOUCH_START, (event) => {
-			this.point.x = event.getLocationX();
-			this.point.y = event.getLocationY();
-			this.setPlayerDirect();
+		// Find the control_left node as a child of this.control
+		let touchTarget = this.control ? this.control.getChildByName('control_left') : null;
+		if (!touchTarget) touchTarget = this.control;
+		cc.log('Joystick addLisener: touchTarget =', touchTarget ? touchTarget.name : 'null');
+
+		// Critical: Newly created empty nodes in Cocos default to size (0, 0) and cannot receive touch events.
+		if (touchTarget && touchTarget !== this.control && touchTarget.width === 0 && touchTarget.height === 0) {
+			touchTarget.setContentSize(this.control.getContentSize());
+			touchTarget.setPosition(this.control.getPosition());
+			touchTarget.anchorX = this.control.anchorX;
+			touchTarget.anchorY = this.control.anchorY;
+		}
+
+		touchTarget.on(cc.Node.EventType.TOUCH_START, (event) => {
+			cc.log('Joystick TOUCH_START at world space:', event.getLocation().toString());
+			if (!this.joystickNode) {
+				cc.log('Joystick TOUCH_START returned early: joystickNode is null');
+				return;
+			}
+			let touchPos = touchTarget.convertToNodeSpaceAR(event.getLocation());
+			cc.log('Joystick TOUCH_START local position in control_left:', touchPos.toString());
+			
+			// Reposition joystick to the touch location
+			this.joystickNode.setPosition(touchPos);
+			this.joystickActive = true;
+			
+			if (this.joystickKnob) {
+				this.joystickKnob.stopAllActions();
+				this.joystickKnob.setPosition(0, 0);
+				this.joystickKnob.runAction(cc.scaleTo(0.1, 1.15));
+			}
+			if (this.joystickNode) {
+				this.joystickNode.stopAllActions();
+				this.joystickNode.runAction(cc.fadeTo(0.1, 255));
+			}
+			
+			this.updateJoystick(event.getLocation());
 		}, this);
 
-		this.control.on(cc.Node.EventType.TOUCH_MOVE, (event) => {
-			this.point.x = event.getLocationX();
-			this.point.y = event.getLocationY();
-			this.setPlayerDirect();
+		touchTarget.on(cc.Node.EventType.TOUCH_MOVE, (event) => {
+			if (!this.joystickActive) {
+				return;
+			}
+			this.updateJoystick(event.getLocation());
 		}, this);
 
-		this.control.on(cc.Node.EventType.TOUCH_END, (event) => {
-			if (cc.Player) {
-				cc.Player.noUp();
-				cc.Player.noDown();
-				cc.Player.noLeft();
-				cc.Player.noRight();
-
-				this.upBtnBg.scale = -1;
-				this.downBtnBg.scale = 1;
-				this.leftBtnBg.scale = 1;
-				this.rightBtnBg.scale = 1;
-				this.fireBtnBg.scale = 1;
-				this.jumpBtnBg.scale = 1;
+		touchTarget.on(cc.Node.EventType.TOUCH_END, (event) => {
+			if (this.joystickActive) {
+				this.joystickActive = false;
+				this.resetJoystick();
 			}
 		}, this);
 
-		this.control.on(cc.Node.EventType.TOUCH_CANCEL, (event) => {
-			if (cc.Player) {
-				cc.Player.noUp();
-				cc.Player.noDown();
-				cc.Player.noLeft();
-				cc.Player.noRight();
-
-				this.upBtnBg.scale = -1;
-				this.downBtnBg.scale = 1;
-				this.leftBtnBg.scale = 1;
-				this.rightBtnBg.scale = 1;
-				this.fireBtnBg.scale = 1;
-				this.jumpBtnBg.scale = 1;
+		touchTarget.on(cc.Node.EventType.TOUCH_CANCEL, (event) => {
+			if (this.joystickActive) {
+				this.joystickActive = false;
+				this.resetJoystick();
 			}
 		}, this);
 
 		this.jumpArea.on(cc.Node.EventType.TOUCH_START, (event) => {
-			cc.Player.setJump();
+			if (cc.Player) {
+				cc.Player.setJump();
+			}
 			this.jumpBtnBg.scale = 1.05;
 		}, this);
 
@@ -445,7 +470,9 @@ cc.Class({
 		}, this);
 
 		this.fireArea.on(cc.Node.EventType.TOUCH_START, (event) => {
-			cc.Player.setFire();
+			if (cc.Player) {
+				cc.Player.setFire();
+			}
 			this.fireBtnBg.scale = 1.05;
 		}, this);
 
@@ -456,6 +483,135 @@ cc.Class({
 		this.fireArea.on(cc.Node.EventType.TOUCH_CANCEL, (event) => {
 			this.fireBtnBg.scale = 1;
 		}, this);
+	},
+
+	initJoystick() {
+		this.joystickActive = false;
+
+		// Find the control_left node as a child of this.control
+		let joystickArea = this.control ? this.control.getChildByName('control_left') : null;
+		if (!joystickArea) joystickArea = this.control;
+		cc.log('Joystick init: control_left node =', joystickArea ? joystickArea.name : 'null');
+		
+		// Fallback size copy for the layout container
+		if (joystickArea && joystickArea !== this.control && joystickArea.width === 0 && joystickArea.height === 0) {
+			joystickArea.setContentSize(this.control.getContentSize());
+			joystickArea.setPosition(this.control.getPosition());
+			joystickArea.anchorX = this.control.anchorX;
+			joystickArea.anchorY = this.control.anchorY;
+		}
+
+		this.joystickNode = joystickArea ? joystickArea.getChildByName('JoystickBg') : null;
+		cc.log('Joystick init: JoystickBg node =', this.joystickNode ? this.joystickNode.name : 'null');
+		
+		if (this.joystickNode) {
+			this.joystickNode.opacity = 150;
+			this.joystickDefaultPos = this.joystickNode.position; // Save default design position
+			this.joystickKnob = this.joystickNode.getChildByName('JoystickKnob');
+			cc.log('Joystick init: JoystickKnob node =', this.joystickKnob ? this.joystickKnob.name : 'null');
+		}
+
+		if (this.joystickKnob) {
+			this.joystickKnob.setPosition(0, 0);
+		}
+	},
+
+	updateJoystick(touchLocation) {
+		if (!this.joystickNode || !this.joystickKnob) {
+			return;
+		}
+
+		// Find the control_left node as a child of this.control
+		let touchTarget = this.control ? this.control.getChildByName('control_left') : null;
+		if (!touchTarget) touchTarget = this.control;
+
+		let touchPos = touchTarget.convertToNodeSpaceAR(touchLocation);
+		let joystickPos = this.joystickNode.position;
+		let dx = touchPos.x - joystickPos.x;
+		let dy = touchPos.y - joystickPos.y;
+		let dist = Math.sqrt(dx * dx + dy * dy);
+
+		// Limit knob position (max travel is 35% of JoystickBg width or custom)
+		let maxRadius = this.joystickNode.width > 0 ? this.joystickNode.width * 0.35 : 35;
+		let knobX = 0;
+		let knobY = 0;
+		if (dist > 0) {
+			let ratio = Math.min(1, maxRadius / dist);
+			knobX = dx * ratio;
+			knobY = dy * ratio;
+		}
+		this.joystickKnob.setPosition(knobX, knobY);
+
+		if (!cc.Player) {
+			return;
+		}
+
+		// Dead zone (30% of max travel radius)
+		let deadZone = maxRadius * 0.3;
+		if (dist < deadZone) {
+			cc.Player.noUp();
+			cc.Player.noDown();
+			cc.Player.noLeft();
+			cc.Player.noRight();
+			return;
+		}
+
+		// Translate dragging angle
+		if (Math.abs(dx) > Math.abs(dy)) {
+			// Horizontal
+			if (dx > 0) {
+				cc.Player.noUp();
+				cc.Player.noDown();
+				cc.Player.noLeft();
+				cc.Player.setRight();
+			} else {
+				cc.Player.noUp();
+				cc.Player.noDown();
+				cc.Player.setLeft();
+				cc.Player.noRight();
+			}
+		} else {
+			// Vertical
+			if (dy > 0) {
+				cc.Player.setUp();
+				cc.Player.noDown();
+				cc.Player.noLeft();
+				cc.Player.noRight();
+			} else {
+				cc.Player.noUp();
+				cc.Player.setDown();
+				cc.Player.noLeft();
+				cc.Player.noRight();
+			}
+		}
+	},
+
+	resetJoystick() {
+		if (cc.Player) {
+			cc.Player.noUp();
+			cc.Player.noDown();
+			cc.Player.noLeft();
+			cc.Player.noRight();
+		}
+
+		this.fireBtnBg.scale = 1;
+		this.jumpBtnBg.scale = 1;
+
+		if (this.joystickKnob) {
+			this.joystickKnob.stopAllActions();
+			this.joystickKnob.runAction(cc.spawn(
+				cc.moveTo(0.15, cc.v2(0, 0)).easing(cc.easeBackOut()),
+				cc.scaleTo(0.15, 1.0)
+			));
+		}
+
+		if (this.joystickNode) {
+			this.joystickNode.stopAllActions();
+			this.joystickNode.runAction(cc.spawn(
+				cc.moveTo(0.15, this.joystickDefaultPos).easing(cc.easeBackOut()),
+				cc.fadeTo(0.15, 150)
+			));
+		}
 	},
 
 	updateValue(key, value) {
