@@ -32,7 +32,9 @@ cc.Class({
 	},
 
 	init() {
-		this.checkPlot();
+		this.plot.active = false;
+		this.ui.active = true;
+		this.initRes();
 	},
 
 	onClick(event, tag) {
@@ -57,9 +59,7 @@ cc.Class({
 	},
 
 	passPlot() {
-		this.plot.active = false;
-		this.ui.active = true;
-		this.initRes();
+		cc.director.loadScene("main");
 	},
 	//电子邮件puhalskijsemen@gmail.com
 	//源码网站 开vpn全局模式打开 http://web3incubators.com/
@@ -91,7 +91,8 @@ cc.Class({
 				this.isLoading = false;
 				cc.layerTag = 'main';
 				this.scheduleOnce(() => {
-					cc.director.loadScene("main");
+					this.plot.active = true;
+					this.ui.active = false;
 				}, 0.2);
 
 				/*this.scheduleOnce(() => {
