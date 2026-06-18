@@ -48,7 +48,7 @@
   },
   "xxteaKey": "0b32a273-9ddd-4e",
   "zipCompressJs": true,
-  "mainCompressionType": "default",
+  "mainCompressionType": "subpackage",
   "mainIsRemote": false,
   "nativeMd5Cache": true,
   "android": {
@@ -57,7 +57,8 @@
   },
   "ios": {
     "REMOTE_SERVER_ROOT": "",
-    "packageName": "org.cocos2d.demo"
+    "packageName": "org.cocos2d.demo",
+    "ios_enable_jit": true
   },
   "mac": {
     "REMOTE_SERVER_ROOT": "",
@@ -69,5 +70,11 @@
     "REMOTE_SERVER_ROOT": "",
     "height": 720,
     "width": 1280
-  }
+  },
+  "harmonyos-next": {
+    "packageName": "org.cocos2d.demo",
+    "REMOTE_SERVER_ROOT": "",
+    "jsEngine": "JSVM"
+  },
+  "agreements": {}
 }
